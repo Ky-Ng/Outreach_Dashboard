@@ -1,16 +1,70 @@
 <template>
   <div class="welcome container">
-      <p>Welcome</p>
+    <p>Welcome to Serendipity STEM's Outreach Dashboard</p>
+    <div v-if="isLogginIn">
+      <LoginForm />
+      <p>No Account? <span @click="isLogginIn = false">Sign Up</span></p>
     </div>
+    <div v-else>
+      <SignupForm />
+      <p>Already a User? <span @click="isLogginIn = true">Sign In</span></p>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import { ref } from "vue";
+import LoginForm from "../components/LoginForm.vue";
+import SignupForm from "../components/SignupForm.vue";
+
+export default {
+  components: {
+    LoginForm,
+    SignupForm,
+  },
+  setup() {
+    const isLogginIn = ref(true);
+    return { isLogginIn };
+  },
+};
 </script>
 
-<style scoped>
+<style>
 .welcome {
   text-align: center;
   padding: 20px 0;
+  margin: 20px 30px;
+  border-radius: 20px;
+}
+
+.welcome label {
+  display: block;
+  margin: 20px auto;
+}
+
+.welcome form {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.welcome input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  background: light;
+  outline: none;
+  color: #999;
+  margin: 10px auto;
+}
+
+.welcome span{
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.welcome button{
+  margin: 20px auto;
 }
 </style>
