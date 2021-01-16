@@ -54,7 +54,7 @@ export default {
   border: 1px solid #eee;
   background: light;
   outline: none;
-  color: #999;
+  /* color: ; */
   margin: 10px auto;
 }
 

@@ -11,9 +11,11 @@ const signup = async (email, password, displayName) => {
         const response = await projectAuth.createUserWithEmailAndPassword(email, password) 
         //try to sign up user with given email and pass, it also returns a boolean  
         if (!response){
-            throw new Error("could not complete the sign up")
+            throw new Error("Could not complete the sign up")
         }
-        console.log(response.user)
+        await response.user.updateProfile({ displayName })
+        error.value = null
+        return response
 
     } catch (err) {
         console.log(err.message)
@@ -21,7 +23,7 @@ const signup = async (email, password, displayName) => {
     }
 }
 
-const useSignup = async () => {
+const useSignup = () => { //return the below values
     return {error, signup}
 }
 

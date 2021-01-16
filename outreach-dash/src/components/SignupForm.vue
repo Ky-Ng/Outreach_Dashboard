@@ -23,7 +23,7 @@ export default {
         const handleSubmit = async () => { //will do the real ones with firebase
             //need be async to await for the async signup method
             await signup(email.value, password.value, displayName.value)
-            console.log(displayName.value, email.value, password.value)
+            console.log("User signed up good job!")
         }
         return {displayName, email, password, handleSubmit}
     }
