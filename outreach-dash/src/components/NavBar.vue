@@ -1,18 +1,28 @@
 <template>
-  <nav>
+<!-- note user is a boolean -->
+<div>
+  <nav v-if="user">
     <div>
-      <p>Hey there... display name here</p>
-      <p class="email">Current logged in as ...</p>
+      <p>Hey there {{ user.displayName }}</p>
+      <p class="email">Currently logged in as {{ user.email }} </p>
     </div>
     <button class="button" @click="handleClick">Logout</button>
   </nav>
+  <nav v-else>
+    <p>You are not signed in. Click here to reauthenticate.</p> 
+    <!-- todo make thie reauth actually go to welcome -->
+  </nav>
+  </div>
 </template>
 
 <script>
 import useLogout from "../composables/useLogout";
+import getUser from '../composables/getUser'
+
 export default {
   setup() {
     const { logout, error } = useLogout();
+    const { user } = getUser()
 
     const handleClick = async () => {
       await logout();
@@ -21,7 +31,7 @@ export default {
       }
       console.log(error.value)
     }
-    return {handleClick}
+    return {handleClick, user}
   },
   
 };
@@ -34,6 +44,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: white;
 }
 nav p {
   margin: 2px auto;
@@ -44,5 +55,6 @@ nav p {
 nav p.email {
   font-size: 14px;
   color: #999;
+  position: relative;
 }
 </style>

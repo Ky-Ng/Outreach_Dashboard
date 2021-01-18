@@ -10,8 +10,9 @@
 <script>
 import { ref } from 'vue'
 import useLogin from '../composables/useLogin'
+
 export default {
-    setup(){ //like data function
+    setup(props, context){ //like data function
         // refs
         
         const email = ref('')
@@ -22,7 +23,11 @@ export default {
         const handleSubmit = async () => { //will do the real ones with firebase
             await login(email.value, password.value)
             if(!error.value){
-                console.log("user logged in")
+                //succesfully logged in
+
+                //can't use this keyword in the setup function, 
+                //instead use the contedxt object from the setup prop
+                context.emit("login")
             }
         }
         return { email, password, handleSubmit, error}

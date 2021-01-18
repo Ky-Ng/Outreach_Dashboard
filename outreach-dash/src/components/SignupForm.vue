@@ -16,7 +16,7 @@ import useSignup from '../composables/useSignup.js'
 // TODO fix this
 
 export default {
-    setup(){ //our own function
+    setup(props, context){ //our own function
         const {error, signup}  = useSignup() //values returned from the useSignup function
         // refs
         const displayName = ref('')
@@ -26,7 +26,14 @@ export default {
         const handleSubmit = async () => { //will do the real ones with firebase
             //need be async to await for the async signup method
             await signup(email.value, password.value, displayName.value)
-            console.log("User signed up good job!")
+            if(!error.value){
+                //succesfully logged in
+
+                //can't use this keyword in the setup function, 
+                //instead use the contedxt object from the setup prop
+                context.emit("signup")
+            }
+            
         }
         return {displayName, email, password, handleSubmit, error}
     }

@@ -6,11 +6,11 @@
     <div class="welcome container">
       <p>Welcome to Serendipity STEM's Outreach Dashboard</p>
       <div v-if="isLogginIn">
-        <LoginForm />
+        <LoginForm @login="toHome"/>
         <p>No Account? <span @click="isLogginIn = false">Sign Up</span></p>
       </div>
       <div v-else>
-        <SignupForm />
+        <SignupForm @signup="toHome"/>
         <p>Already a User? <span @click="isLogginIn = true">Sign In</span></p>
       </div>
     </div>
@@ -22,6 +22,7 @@ import { ref } from "vue";
 import LoginForm from "../components/LoginForm.vue";
 import SignupForm from "../components/SignupForm.vue";
 import NavBar from "../components/NavBar";
+import { useRouter } from 'vue-router'
 
 export default {
   components: {
@@ -31,7 +32,15 @@ export default {
   },
   setup() {
     const isLogginIn = ref(true);
-    return { isLogginIn };
+
+    //setting up router for going to various pages
+    const router = useRouter()
+    
+    const toHome = () =>{
+      router.push({ name: 'Home' }) //Home Component 
+    }
+
+    return { isLogginIn, toHome };
   },
 };
 </script>
