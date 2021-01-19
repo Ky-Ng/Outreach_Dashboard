@@ -62,7 +62,7 @@ export default {
   width: 300px;
   margin: 20px auto;
 }
-
+/* make the input boxes small or big (responsibe) */
 .welcome input {
   width: 100%;
   padding: 10px;
