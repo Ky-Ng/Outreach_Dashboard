@@ -19,6 +19,7 @@ const firebaseConfig = {
 
   const projectAuth = firebase.auth()
   const projectFirestore = firebase.firestore()
+  // TODO possibly implement the automatic log out
   const timestamp = firebase.firestore.FieldValue.serverTimestamp
 
   export {projectAuth, projectFirestore, timestamp}
