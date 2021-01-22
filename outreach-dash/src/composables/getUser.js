@@ -7,7 +7,6 @@ const user = ref(projectAuth.currentUser)
 //this function will fire when there is a status change
 projectAuth.onAuthStateChanged((_user) => { 
     // this is known as a callback funciton
-    console.log("User state change: Current user is ", _user)
     user.value = _user
 })
 

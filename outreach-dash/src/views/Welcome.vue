@@ -43,7 +43,6 @@ export default {
     const toHome = () =>{
       router.push({ name: 'Home' }) //Home Component 
     }
-    console.log('the current user.value is ', user.value)
     try {
       if(user.value.email != null){
       router.push({ name: 'Home' })

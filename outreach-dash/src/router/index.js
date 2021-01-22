@@ -8,7 +8,6 @@ import { projectAuth } from '../firebase/config'
 //to is where we're going, from is where we're at, next is a func action 
 const requireAuthRouteGuard = (to, from, next) =>{
   let user = projectAuth.currentUser //this will automatically update
-  console.log('current user in auth guard: ', user)
   if (!user){
     next({ name: 'Welcome' })
   }else{
