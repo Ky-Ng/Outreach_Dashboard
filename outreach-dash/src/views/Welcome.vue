@@ -25,7 +25,7 @@ import LoginForm from "../components/LoginForm.vue";
 import SignupForm from "../components/SignupForm.vue";
 import NavBar from "../components/NavBar";
 import { useRouter } from 'vue-router'
-import { getUser } from '../composables/getUser'
+import getUser from '../composables/getUser'
 
 export default {
   components: {
@@ -38,14 +38,19 @@ export default {
 
     //setting up router for going to various pages
     const router = useRouter()
-    // const { user } = getUser()
+    const { user } = getUser()
 
     const toHome = () =>{
       router.push({ name: 'Home' }) //Home Component 
     }
-    // if(user.value == null){
-    //   router.push({ name: 'Home' })
-    // }
+    console.log('the current user.value is ', user.value)
+    try {
+      if(user.value.email != null){
+      router.push({ name: 'Home' })
+    }
+    } catch (error) {//do nothing because there is no user logged in
+    }
+    
 
     return { isLogginIn, toHome };
   },
