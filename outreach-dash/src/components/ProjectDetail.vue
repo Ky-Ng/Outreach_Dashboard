@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Week N ...</p>
+        <p class="header">Week N ...</p>
     </div>
 </template>
 
@@ -9,3 +9,10 @@ export default {
     
 }
 </script>
+
+<style>
+header p {
+    justify-content: left;
+    
+}
+</style>
