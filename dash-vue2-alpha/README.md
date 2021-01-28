@@ -1,4 +1,4 @@
-# dash-vue2
+# dash-vue2-alpha
 
 ## Project setup
 ```
