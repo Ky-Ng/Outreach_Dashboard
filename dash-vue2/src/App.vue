@@ -3,10 +3,24 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      
     </div>
     <router-view/>
   </div>
 </template>
+<script>
+import {projectAuth} from '../src/firebase/config'
+import useLogin from '../src/firebase/useLogin'
+
+export default {
+  setup(){
+    const foo = useLogin
+    console.log(foo)
+    return foo;
+  },
+    
+}
+</script>
 
 <style>
 #app {
