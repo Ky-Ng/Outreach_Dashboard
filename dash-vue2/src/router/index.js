@@ -1,28 +1,42 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import Welcome from '../views/Welcome.vue'
+import Home from '../views/Home'
+import ProjectDetail from "../components/ProjectDetail"
+import { projectAuth } from '../firebase/config'
 
-Vue.use(VueRouter)
+// auth guard
+
+//to is where we're going, from is where we're at, next is a func action 
+const requireAuthRouteGuard = (to, from, next) =>{
+  let user = projectAuth.currentUser //this will automatically update
+  if (!user){
+    next({ name: 'Welcome' })
+  }else{
+    next() //carrying on to the "next" route
+  }
+}
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Welcome',
+    component: Welcome,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/home',
+    name: 'Home',
+    component: Home,
+    beforeEnter: requireAuthRouteGuard //just calls the requireAuthRouteGuard
+  },
+  {
+    path: '/test',
+    name: 'ProjectDetail',
+    component: ProjectDetail,
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 

@@ -1,10 +1,16 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import './assets/main.css'
 
-Vue.config.productionTip = false
+import { projectAuth } from './firebase/config'
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+
+let app
+//only create the app and mount to the DOM when the user first logs in
+projectAuth.onAuthStateChanged(() => { 
+    if(!app){
+        app = createApp(App).use(router).mount('#app')
+    }
+})
+
