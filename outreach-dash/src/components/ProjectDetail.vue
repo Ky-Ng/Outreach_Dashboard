@@ -1,18 +1,28 @@
 <template>
-    <div>
-        <p class="header">Week N ...</p>
+  <div class="curriculum">
+    <div class="week">
+      <p>Week {{N}}</p>
     </div>
+    <div class="title">
+      <p>Project Title</p>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style>
-header p {
-    justify-content: left;
-    
+.curriculum {
+  padding-block: 10px;
+  display: flex;
+  font-size: 130%;
+}
+.week {
+  padding-left: 30px;
+}
+.title{
+    padding-left: 60%;
 }
 </style>
