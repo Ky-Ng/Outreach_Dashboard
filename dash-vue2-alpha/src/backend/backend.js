@@ -13,3 +13,7 @@ const firebaseConfig = {
 
   // init firebase
   firebase.initializeApp(firebaseConfig)
+
+  const myProjectAuth = firebase.auth()
+
+  export { myProjectAuth }
