@@ -7,7 +7,6 @@ import { myProjectAuth } from './backend/backend'
 Vue.config.productionTip = false
 
 let app
-
 myProjectAuth.onAuthStateChanged(() => {
   if (!app){
   new Vue({
