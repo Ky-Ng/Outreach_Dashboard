@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify';
-import { myProjectAuth } from './backend/backend'
+import {myProjectAuth} from "./backend/backend";
 
 Vue.config.productionTip = false
 
