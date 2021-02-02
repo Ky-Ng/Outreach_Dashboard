@@ -1,5 +1,6 @@
 <template>
   <div>
+<!--    The google Authentication Card -->
     <v-card
         class="mx-auto my-3"
         max-width="900"
@@ -37,6 +38,8 @@
 
 import firebase from "firebase";
 import * as firebaseui from "firebaseui";
+import router from "@/router/router";
+import {myProjectAuth} from "@/backend/backend";
 
 export default {
   name: "auth",
