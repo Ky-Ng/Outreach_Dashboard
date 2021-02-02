@@ -3,9 +3,18 @@ import VueRouter from 'vue-router'
 import AuthPage from '../views/AuthPage'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
+import {myProjectAuth} from "@/backend/backend";
 
 Vue.use(VueRouter)
 
+const requireAuth = (to, from, next) => {
+  let user = myProjectAuth.currentUser
+  if (!user){
+    next({name: 'AuthPage'})
+  }else{
+    next()
+  }
+}
 const routes = [
   {
     path: '/',
@@ -15,7 +24,8 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    beforeEnter: requireAuth
   },
   {
     path: '/about',
