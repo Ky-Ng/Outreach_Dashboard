@@ -1,13 +1,43 @@
 <template>
   <div>
-    <p>Please Authenticate</p>
-    <div id="firebaseui-auth-container"></div>
+    <v-card
+        class="mx-auto my-3"
+        max-width="900"
+    >
+      <v-img
+          class="white--text align-end"
+          height="400px"
+          src="../assets/FullLOGO.png"
+      >
+        <v-card-title>Community Outreach Reengineered</v-card-title>
+      </v-img>
+
+      <v-card-subtitle class="pb-0">
+
+      </v-card-subtitle>
+
+      <v-card-text class="text--primary">
+        Sign in to be a part of our warm and welcoming STEM community, premium STEM curriculum, and so much more.
+      </v-card-text>
+      <div id="firebaseui-auth-container"></div>
+      <v-card-actions>
+        <v-btn
+            color="red"
+            text
+        >
+
+        </v-btn>
+
+      </v-card-actions>
+    </v-card>
   </div>
 </template>
 
 <script>
-import * as firebaseui from "firebaseui"
+
 import firebase from "firebase";
+import * as firebaseui from "firebaseui";
+
 export default {
   name: "auth",
   mounted(){ //when it is mounted
@@ -17,7 +47,7 @@ export default {
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       ]
     };
-    const ui = new firebaseui.auth.AuthUI(firebase.auth());
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
     ui.start('#firebaseui-auth-container', uiConfig)
   }
 }
