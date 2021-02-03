@@ -27,5 +27,5 @@ export default {
     return{
       USER: myProjectAuth.currentUser.displayName,
   }
-}
+}}
 </script>
