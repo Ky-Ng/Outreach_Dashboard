@@ -9,7 +9,7 @@
     <v-card-title>
       <h3>Welcome back {{ USER }}. Here is your Serendipity Outreach Dashboard!</h3>
     </v-card-title>
-  </v-card>
+  </v-card> <!-- Welcome Message -->
   </v-container>
 </template>
 
@@ -25,8 +25,7 @@ export default {
   },
   data (){
     return{
-      USER: myProjectAuth.currentUser.displayName
-    }
+      USER: myProjectAuth.currentUser.displayName,
   }
 }
 </script>
