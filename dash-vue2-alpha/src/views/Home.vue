@@ -2,12 +2,12 @@
   <v-container>
   <v-card
       class="mx-auto"
-      color="#26c6da"
+      color="red accent-2"
       dark
       max-width="3000"
   >
     <v-card-title>
-      <h3>Welcome back {{ USER }}. Here is your Serendipity Outreach Dashboard!</h3>
+      <h3>Welcome back {{ USER }}, here is your Serendipity Outreach Dashboard!</h3>
     </v-card-title>
   </v-card> <!-- Welcome Message -->
 
@@ -19,10 +19,11 @@
         :key="i"
     >
     <v-card-title>
-      <h3>
-        {{ curriculum.name }}
-      </h3>
-<!--      <h3>Week {{ // curriculum_component. }}</h3>-->
+
+      <h3>Week {{ curriculum.week }}: {{ curriculum.name }}</h3>
+      <v-col></v-col>
+      <h4 class="font-italic">{{ curriculum.topic }}</h4>
+
     </v-card-title>
     </v-card>
 
@@ -44,12 +45,14 @@ export default {
       USER: myProjectAuth.currentUser.displayName,
       curriculum_components: [
         {
-          week: 0,
-          name: 'Lemonade stand'
+          week: 1,
+          name: 'Lemonade Stand',
+          topic: "Fundamental Movement"
         },
         {
-          week: 1,
-          name: 'Save the Lemonade'
+          week: 2,
+          name: 'Save the Lemonade',
+          topic: "Fundamental Movement"
         },
       ]
   }
