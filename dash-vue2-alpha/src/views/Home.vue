@@ -1,7 +1,5 @@
 <template>
-  <v-container
-      class="blue lighten-5"
-  >
+  <v-container>
   <v-card
       class="mx-auto"
       color="#26c6da"
