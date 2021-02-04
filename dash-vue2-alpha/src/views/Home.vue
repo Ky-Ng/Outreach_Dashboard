@@ -20,9 +20,10 @@
     >
     <v-card-title>
 
-      <h3>Week {{ curriculum.week }}: {{ curriculum.name }}</h3>
-      <v-col></v-col>
-      <h4 class="font-italic">{{ curriculum.topic }}</h4>
+      <h3>Week {{ curriculum.week }}: {{ curriculum.name }}</h3><v-col></v-col>
+
+
+        <h4 class="font-italic">{{ curriculum.topic }}</h4>
 
     </v-card-title>
     </v-card>
