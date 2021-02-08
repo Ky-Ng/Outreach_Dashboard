@@ -8,12 +8,24 @@
         elevation="2"
     >
       <v-card-title>
-        <v-icon
-            large
-            @click="curriculum.show_details = !curriculum.show_details"
-        >
-          mdi-chevron-right
-        </v-icon>
+        <div v-if="curriculum.show_details">
+          <v-icon
+              large
+              @click="curriculum.show_details = !curriculum.show_details"
+          >
+            mdi-chevron-down
+          </v-icon>
+        </div>
+
+        <div v-if="!curriculum.show_details">
+          <v-icon
+              large
+              @click="curriculum.show_details = !curriculum.show_details"
+          >
+            mdi-chevron-right
+          </v-icon>
+        </div>
+
         <h3>Week {{ curriculum.week }}: {{ curriculum.name }}</h3>
         <v-col></v-col>
         <h4 class="font-italic">{{ curriculum.topic }}</h4>
@@ -22,9 +34,18 @@
             v-if="curriculum.show_details"
             class="title details"
         >
-          <v-list-item :href="curriculum.documentation" target="_blank">Documentation: {{ curriculum.name }}</v-list-item>
-          <v-list-item :href="curriculum.student_link" target="_blank">Student Project: {{ curriculum.name }}</v-list-item>
-          <v-list-item :href="curriculum.teacher_link" target="_blank">Teacher Project: {{ curriculum.name }}</v-list-item>
+          <v-list-item :href="curriculum.documentation" target="_blank">Documentation: {{
+              curriculum.name
+            }}
+          </v-list-item>
+          <v-list-item :href="curriculum.student_link" target="_blank">Student Project: {{
+              curriculum.name
+            }}
+          </v-list-item>
+          <v-list-item :href="curriculum.teacher_link" target="_blank">Teacher Project: {{
+              curriculum.name
+            }}
+          </v-list-item>
         </v-card-text>
 
       </v-card-title>
