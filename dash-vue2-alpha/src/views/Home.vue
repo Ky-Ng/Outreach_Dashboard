@@ -1,33 +1,16 @@
 <template>
   <v-container>
-  <v-card
-      class="mx-auto"
-      color="red accent-2"
-      dark
-      max-width="3000"
-  >
-    <v-card-title>
-      <h3>Welcome back {{ USER }}, here is your Serendipity Outreach Dashboard!</h3>
-    </v-card-title>
-  </v-card> <!-- Welcome Message -->
-
     <v-card
-        class="my-3"
-        elevation="2"
-        color="pink lighten-5"
-        v-for="(curriculum, i) in curriculum_components"
-        :key="i"
+        class="mx-auto"
+        color="red accent-2"
+        dark
+        max-width="3000"
     >
-    <v-card-title>
-
-      <h3>Week {{ curriculum.week }}: {{ curriculum.name }}</h3><v-col></v-col>
-
-
-        <h4 class="font-italic">{{ curriculum.topic }}</h4>
-
-    </v-card-title>
-    </v-card>
-
+      <v-card-title>
+        <h3>Welcome back {{ USER }}, here is your Serendipity Outreach Dashboard!</h3>
+      </v-card-title>
+    </v-card> <!-- Welcome Message -->
+    <CurriculumMain></CurriculumMain>
   </v-container>
 </template>
 
@@ -36,27 +19,19 @@
 
 
 import {myProjectAuth} from "@/backend/backend";
+import CurriculumMain from "@/components/curriculum/CurriculumMain";
 
 export default {
   name: 'Home',
   components: {
+    CurriculumMain,
   },
-  data (){
-    return{
+  data() {
+    return {
       USER: myProjectAuth.currentUser.displayName,
-      curriculum_components: [
-        {
-          week: 1,
-          name: 'Lemonade Stand',
-          topic: "Fundamental Movement"
-        },
-        {
-          week: 2,
-          name: 'Save the Lemonade',
-          topic: "Fundamental Movement"
-        },
-      ]
+
+    }
   }
-}}
+}
 </script>
 
