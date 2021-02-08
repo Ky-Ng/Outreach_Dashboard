@@ -4,7 +4,7 @@ import AuthPage from '../views/AuthPage'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import {myProjectAuth} from "@/backend/backend";
-import CurriculumMain from "@/components/curriculum/CurriculumMain";
+import CurriculumMain from "@/components/curriculum/CurriculumContent";
 
 Vue.use(VueRouter)
 
