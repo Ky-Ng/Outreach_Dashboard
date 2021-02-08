@@ -5,7 +5,8 @@
   background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
   background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
 /*  credits: User Blue Frog from https://stackoverflow.com/questions/50243769/vuetify-how-to-set-background-color*/
-">
+"
+  >
     <router-view></router-view>
   </v-app>
 </template>

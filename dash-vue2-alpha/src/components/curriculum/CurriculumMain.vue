@@ -10,7 +10,7 @@
       <v-card-title>
         <v-icon
             large
-            @click="curriculum.show_details = true"
+            @click="curriculum.show_details = !curriculum.show_details"
         >
           mdi-chevron-right
         </v-icon>
@@ -22,8 +22,11 @@
             v-if="curriculum.show_details"
             class="title details"
         >
-          {{ curriculum.name }}
+          <v-list-item :href="curriculum.documentation" target="_blank">Documentation: {{ curriculum.name }}</v-list-item>
+          <v-list-item :href="curriculum.student_link" target="_blank">Student Project: {{ curriculum.name }}</v-list-item>
+          <v-list-item :href="curriculum.teacher_link" target="_blank">Teacher Project: {{ curriculum.name }}</v-list-item>
         </v-card-text>
+
       </v-card-title>
 
 
@@ -43,7 +46,7 @@ export default {
           topic: "Fundamental Movement",
           show_details: false,
 
-          description: 'Help Cat get to the lemonade stand and back to his chair on the sandy beach! Use the forward, point in direction commands to help you. If you have extra time, say hi to the lemonade stand.',
+
           student_link: 'https://scratch.mit.edu/projects/392293538/editor/',
           teacher_link: 'https://scratch.mit.edu/projects/392339139/editor/',
           documentation: 'https://docs.google.com/document/d/1myUQSr9p_nidSYiDRLzR3SQxKBFRb8CyfOgTOQG8NTs/edit?usp=sharing'
@@ -53,6 +56,11 @@ export default {
           name: 'Save the Lemonade',
           topic: "Fundamental Movement",
           show_details: false,
+
+          description: 'descrip2',
+          student_link: 'https://scratch.mit.edu/projects/395076094/editor/',
+          teacher_link: 'https://scratch.mit.edu/projects/395061400/editor/',
+          documentation: 'https://docs.google.com/document/d/1xzr88wAhpQrx8qtI1aXHauvCuZy9yeRivsZxiDSqTpQ/edit?usp=drive_web&ouid=105169288214493351359'
         },
       ],
     }
@@ -64,5 +72,7 @@ export default {
 <style scoped>
 .details {
   margin-left: 20px;
+  text-align: left;
+  word-wrap: break-word;
 }
 </style>
