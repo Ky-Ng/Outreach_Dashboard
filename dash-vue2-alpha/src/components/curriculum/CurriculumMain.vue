@@ -1,39 +1,18 @@
 <template>
   <v-container>
-    <v-card
+    <v-expansion-panels
         v-for="(curriculum, i) in curriculum_components"
         :key="i"
         class="my-3"
         color="pink lighten-5"
         elevation="2"
     >
-      <v-card-title>
-        <div v-if="curriculum.show_details">
-          <v-icon
-              large
-              @click="curriculum.show_details = !curriculum.show_details"
-          >
-            mdi-chevron-down
-          </v-icon>
-        </div>
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          <h2>Week {{ curriculum.week }}: {{ curriculum.name }}</h2>
+        </v-expansion-panel-header>
 
-        <div v-if="!curriculum.show_details">
-          <v-icon
-              large
-              @click="curriculum.show_details = !curriculum.show_details"
-          >
-            mdi-chevron-right
-          </v-icon>
-        </div>
-
-        <h3>Week {{ curriculum.week }}: {{ curriculum.name }}</h3>
-        <v-col></v-col>
-        <h4 class="font-italic">{{ curriculum.topic }}</h4>
-
-        <v-card-text
-            v-if="curriculum.show_details"
-            class="title details"
-        >
+        <v-expansion-panel-content>
           <v-list-item :href="curriculum.documentation" target="_blank">Documentation: {{
               curriculum.name
             }}
@@ -46,12 +25,10 @@
               curriculum.name
             }}
           </v-list-item>
-        </v-card-text>
+        </v-expansion-panel-content>
 
-      </v-card-title>
-
-
-    </v-card>
+      </v-expansion-panel>
+    </v-expansion-panels>
   </v-container>
 </template>
 
@@ -91,9 +68,9 @@ export default {
 </script>
 
 <style scoped>
-.details {
-  margin-left: 20px;
-  text-align: left;
-  word-wrap: break-word;
-}
+/*.details {*/
+/*  margin-left: 20px;*/
+/*  text-align: left;*/
+/*  word-wrap: break-word;*/
+/*}*/
 </style>

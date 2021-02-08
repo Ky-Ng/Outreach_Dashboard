@@ -9,7 +9,8 @@
       <v-card-title>
         <h3>Welcome back {{ USER }}, here is your Serendipity Outreach Dashboard!</h3>
       </v-card-title>
-    </v-card> <!-- Welcome Message -->
+    </v-card>
+
     <CurriculumMain></CurriculumMain>
   </v-container>
 </template>
