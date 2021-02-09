@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <AddCurriculum></AddCurriculum>
+
     <CurriculumContent></CurriculumContent>
   </v-container>
 </template>
@@ -13,7 +13,7 @@ export default {
   name: "CurriculumMain",
   components: {
     CurriculumContent,
-    AddCurriculum,
+
   }
 }
 </script>
