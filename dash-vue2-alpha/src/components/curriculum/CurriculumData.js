@@ -21,7 +21,9 @@ let curriculum_details = [
 ]
 
 function updateDetails(incoming_curriculum){
-    curriculum_details = curriculum_details.concat(incoming_curriculum)
+    curriculum_details.push(incoming_curriculum)
+    console.log("from the curriculum data . js")
+    console.log(curriculum_details)
 }
 
 export { curriculum_details , updateDetails}
