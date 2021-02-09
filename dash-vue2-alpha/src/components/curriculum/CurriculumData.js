@@ -24,4 +24,4 @@ function updateDetails(incoming_curriculum){
     curriculum_details = curriculum_details.concat(incoming_curriculum)
 }
 
-export { curriculum_details }
+export { curriculum_details , updateDetails}

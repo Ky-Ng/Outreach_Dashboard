@@ -47,12 +47,15 @@ export default {
   name: "CurriculumContent",
   props: {
     incoming_curriculum: Object,
+
   },
   data() {
     return {
       curriculum_components: curriculum_details
-
     }
+  },
+  beforeUpdate() {
+    this.curriculum_components = curriculum_details
   },
   methods: {
     updateCurriculumToRender() {

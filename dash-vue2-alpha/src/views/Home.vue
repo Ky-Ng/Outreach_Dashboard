@@ -51,6 +51,7 @@ import {myProjectAuth} from "@/backend/backend";
 import CurriculumMain from "@/components/curriculum/CurriculumMain";
 import OutreachMain from "@/components/outreach/OutreachMain";
 import AddCurriculum from "@/components/curriculum/AddCurriculum";
+import {curriculum_details, updateDetails} from "@/components/curriculum/CurriculumData";
 
 export default {
   name: 'Home',
@@ -69,7 +70,11 @@ export default {
   },
   methods:{
     addCurriculum(new_curriculum_object) {
+      alert("joe mama")
       this.temp_add_curriculum = new_curriculum_object
+      updateDetails(new_curriculum_object)
+      console.log("The curriculum_details from home.vue")
+      console.log(curriculum_details)
     }
   }
 }
