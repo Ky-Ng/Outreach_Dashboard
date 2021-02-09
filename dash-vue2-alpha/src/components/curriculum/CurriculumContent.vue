@@ -1,5 +1,7 @@
 <template>
   <v-container>
+
+
     <v-expansion-panels
         v-for="(curriculum, i) in curriculum_components"
         :key="i"
@@ -29,41 +31,37 @@
 
       </v-expansion-panel>
     </v-expansion-panels>
+    <!--    just a watcher  -->
+    <div v-if="incoming_curriculum != null">
+      <p @change="updateCurriculumToRender">
+        {{ incoming_curriculum.documentation }}
+      </p>
+    </div>
   </v-container>
 </template>
 
 <script>
+import {curriculum_details} from "@/components/curriculum/CurriculumData";
+
 export default {
   name: "CurriculumContent",
+  props: {
+    incoming_curriculum: Object,
+  },
   data() {
     return {
-      curriculum_components: [
-        {
-          week: 1,
-          name: 'Lemonade Stand',
+      curriculum_components: curriculum_details
 
-          show_details: false,
-
-
-          student_link: 'https://scratch.mit.edu/projects/392293538/editor/',
-          teacher_link: 'https://scratch.mit.edu/projects/392339139/editor/',
-          documentation: 'https://docs.google.com/document/d/1myUQSr9p_nidSYiDRLzR3SQxKBFRb8CyfOgTOQG8NTs/edit?usp=sharing'
-        },
-        {
-          week: 2,
-          name: 'Save the Lemonade',
-
-          show_details: false,
-
-
-          student_link: 'https://scratch.mit.edu/projects/395076094/editor/',
-          teacher_link: 'https://scratch.mit.edu/projects/395061400/editor/',
-          documentation: 'https://docs.google.com/document/d/1xzr88wAhpQrx8qtI1aXHauvCuZy9yeRivsZxiDSqTpQ/edit?usp=drive_web&ouid=105169288214493351359'
-        },
-      ],
     }
   },
-  methods: {}
+  methods: {
+    updateCurriculumToRender() {
+      this.curriculum_components.append(this.incoming_curriculum)
+      console.log("the curriculum component updated is now")
+      console.log(this.curriculum_components)
+      alert("logging the appended component now!")
+    }
+  }
 }
 </script>
 

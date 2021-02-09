@@ -81,10 +81,10 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-btn
-                  color="primary"
-                  dark
                   v-bind="attrs"
                   v-on="on"
+                  color="primary"
+                  dark
                   @click="addCurriculum"
               >
                 Save
@@ -98,7 +98,7 @@
             </v-card>
           </v-dialog>
           <!--      TODO fix the issue if not all the components are met, do not allow submit-->
-<!--          TODO fix uneven curriculum name and week-->
+          <!--          TODO fix uneven curriculum name and week-->
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -108,9 +108,7 @@
 <script>
 export default {
   name: "AddCurriculum",
-  props:{
-    foo: Object,
-  },
+  props: {},
 
   data() {
     return {
@@ -127,15 +125,17 @@ export default {
   },
   methods: {
     addCurriculum() {
-      if ( this.curriculum_details.week.length > 0 &&
-            this.curriculum_details.name.length > 0 &&
+      if (this.curriculum_details.week.length > 0 &&
+          this.curriculum_details.name.length > 0 &&
           this.curriculum_details.student_link.length > 0 &&
           this.curriculum_details.teacher_link.length > 0 &&
-          this.curriculum_details.documentation.length > 0)
-      {
+          this.curriculum_details.documentation.length > 0) {
+
         this.show = false
-        this.$emit('addedNewCurriculum', this.curriculum_details)
+        this.$emit('newCurriculum', this.curriculum_details)
         console.log("Emitting curriculum from AddCurriculum.vue")
+        console.log(this.curriculum_details)
+
       } else {
         this.error = true;
       }

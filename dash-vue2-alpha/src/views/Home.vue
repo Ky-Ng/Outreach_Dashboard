@@ -20,7 +20,7 @@
     <!--    nav  -->
     <v-row style="padding-top: 20px">
       <v-col cols="9" style="padding-left: 30px">
-        <AddCurriculum v-if="show_curriculum"></AddCurriculum>
+        <AddCurriculum v-if="show_curriculum" @newCurriculum="addCurriculum"></AddCurriculum>
       </v-col>
       <v-col cols="3">
         <v-row>
@@ -36,7 +36,7 @@
       </v-col>
     </v-row>
 
-    <CurriculumMain v-if="show_curriculum" @addedNewCurriculum="addCurriculumXYZ"></CurriculumMain>
+    <CurriculumMain v-if="show_curriculum" :incoming_curriculum="temp_add_curriculum"></CurriculumMain>
     <OutreachMain v-else></OutreachMain>
 
 
@@ -64,11 +64,12 @@ export default {
     return {
       USER: myProjectAuth.currentUser,
       show_curriculum: true,
+      temp_add_curriculum: null,
     }
   },
   methods:{
-    addCurriculumXYZ() {
-      console.log("Adding curric from home.vue")
+    addCurriculum(new_curriculum_object) {
+      this.temp_add_curriculum = new_curriculum_object
     }
   }
 }

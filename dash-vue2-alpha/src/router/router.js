@@ -4,7 +4,8 @@ import AuthPage from '../views/AuthPage'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import {myProjectAuth} from "@/backend/backend";
-import CurriculumMain from "@/components/curriculum/CurriculumContent";
+import Test from '@/views/Test'
+
 
 Vue.use(VueRouter)
 
@@ -24,8 +25,8 @@ const routes = [
   },
   {
     path: '/test',
-    name: 'CurriculumMain',
-    component: CurriculumMain
+    name: 'Test',
+    component: Test,
   },
   {
     path: '/home',
