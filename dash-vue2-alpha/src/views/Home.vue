@@ -36,7 +36,7 @@
       </v-col>
     </v-row>
 
-    <CurriculumMain v-if="show_curriculum"></CurriculumMain>
+    <CurriculumMain v-if="show_curriculum" @addedNewCurriculum="addCurriculumXYZ"></CurriculumMain>
     <OutreachMain v-else></OutreachMain>
 
 
@@ -64,6 +64,11 @@ export default {
     return {
       USER: myProjectAuth.currentUser,
       show_curriculum: true,
+    }
+  },
+  methods:{
+    addCurriculumXYZ() {
+      console.log("Adding curric from home.vue")
     }
   }
 }
