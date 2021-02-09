@@ -76,14 +76,29 @@
           >
             Cancel
           </v-btn>
-          <v-btn
-              color="blue darken-1"
-              text
-              @click="addCurriculum"
+          <v-dialog
+              max-width="345"
           >
-            Save
-          </v-btn>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                  color="primary"
+                  dark
+                  v-bind="attrs"
+                  v-on="on"
+                  @click="addCurriculum"
+              >
+                Save
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title class="">
+                Please fill out all required fields.
+              </v-card-title>
+
+            </v-card>
+          </v-dialog>
           <!--      TODO fix the issue if not all the components are met, do not allow submit-->
+<!--          TODO fix uneven curriculum name and week-->
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -93,11 +108,14 @@
 <script>
 export default {
   name: "AddCurriculum",
-
+  props:{
+    foo: Object,
+  },
 
   data() {
     return {
-      show: false, //todo fix later
+      show: false,
+      error: false,
       curriculum_details: {
         week: '',
         name: '',
@@ -109,9 +127,20 @@ export default {
   },
   methods: {
     addCurriculum() {
-      console.log(this.curriculum_details)
-      this.show = false
-      this.emit('addedNewCurriculum', this.curriculum_details)
+      if ( this.curriculum_details.week.length > 0 &&
+            this.curriculum_details.name.length > 0 &&
+          this.curriculum_details.student_link.length > 0 &&
+          this.curriculum_details.teacher_link.length > 0 &&
+          this.curriculum_details.documentation.length > 0)
+      {
+        this.show = false
+        this.$emit('addedNewCurriculum', this.curriculum_details)
+        console.log("Emitting curriculum from AddCurriculum.vue")
+      } else {
+        this.error = true;
+      }
+
+
     }
   }
 }

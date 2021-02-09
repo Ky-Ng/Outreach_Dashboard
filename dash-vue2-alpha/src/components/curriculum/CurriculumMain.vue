@@ -1,13 +1,12 @@
 <template>
   <v-container>
-
-    <CurriculumContent @addedNewCurriculum="console.log('added new curricu')"></CurriculumContent>
+    <CurriculumContent></CurriculumContent>
   </v-container>
 </template>
 
 <script>
 import CurriculumContent from "@/components/curriculum/CurriculumContent";
-import AddCurriculum from "@/components/curriculum/AddCurriculum";
+
 
 export default {
   name: "CurriculumMain",
