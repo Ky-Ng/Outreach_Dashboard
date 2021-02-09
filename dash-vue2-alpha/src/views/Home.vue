@@ -17,6 +17,7 @@
       </v-card-title>
     </v-card> <!-- Header -->
 
+    <!--    nav  -->
     <v-row style="padding-top: 20px">
       <v-col cols="9" style="padding-left: 30px">
         <AddCurriculum v-if="show_curriculum"></AddCurriculum>
@@ -26,10 +27,10 @@
           <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white"
           >Change View</p>
           <v-switch
-              style="padding-top: 20px"
               v-model="show_curriculum"
               color="white"
               inset
+              style="padding-top: 20px"
           ></v-switch>
         </v-row> <!--    Switch   -->
       </v-col>

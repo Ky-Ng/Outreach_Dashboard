@@ -1,7 +1,7 @@
 <template>
   <v-container>
 
-    <CurriculumContent></CurriculumContent>
+    <CurriculumContent @addedNewCurriculum="console.log('added new curricu')"></CurriculumContent>
   </v-container>
 </template>
 
