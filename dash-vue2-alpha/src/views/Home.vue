@@ -17,18 +17,26 @@
       </v-card-title>
     </v-card> <!-- Header -->
 
-    <v-row>
-      <p style="padding-right: 20px; margin-top: 20px"
-      >Change View</p>
-      <v-switch
-          v-model="show_curriculum"
-          color="teal accent-2"
-          inset
-      ></v-switch>
-    </v-row> <!--    Switch   -->
+    <v-row style="padding-top: 20px">
+      <v-col cols="9" style="padding-left: 30px">
+        <AddCurriculum v-if="show_curriculum"></AddCurriculum>
+      </v-col>
+      <v-col cols="3">
+        <v-row>
+          <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white"
+          >Change View</p>
+          <v-switch
+              style="padding-top: 20px"
+              v-model="show_curriculum"
+              color="white"
+              inset
+          ></v-switch>
+        </v-row> <!--    Switch   -->
+      </v-col>
+    </v-row>
 
     <CurriculumMain v-if="show_curriculum"></CurriculumMain>
-
+    <OutreachMain v-else></OutreachMain>
 
 
   </v-container>
@@ -40,11 +48,15 @@
 
 import {myProjectAuth} from "@/backend/backend";
 import CurriculumMain from "@/components/curriculum/CurriculumMain";
+import OutreachMain from "@/components/outreach/OutreachMain";
+import AddCurriculum from "@/components/curriculum/AddCurriculum";
 
 export default {
   name: 'Home',
   components: {
+    OutreachMain,
     CurriculumMain,
+    AddCurriculum,
   },
 
   data() {
