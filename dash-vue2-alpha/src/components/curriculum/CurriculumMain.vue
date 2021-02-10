@@ -10,9 +10,6 @@ import CurriculumContent from "@/components/curriculum/CurriculumContent";
 
 export default {
   name: "CurriculumMain",
-  // props: [
-  //     "incoming_curriculum"
-  // ],
   components: {
     CurriculumContent,
   }

@@ -31,12 +31,6 @@
 
       </v-expansion-panel>
     </v-expansion-panels>
-    <!--    just a watcher  -->
-<!--    <div v-if="incoming_curriculum != null">-->
-<!--      <p @change="updateCurriculumToRender">-->
-<!--        {{ incoming_curriculum.documentation }}-->
-<!--      </p>-->
-<!--    </div>-->
   </v-container>
 </template>
 
@@ -45,33 +39,11 @@ import {curriculum_details} from "@/components/curriculum/CurriculumData";
 
 export default {
   name: "CurriculumContent",
-  // props: {
-  //   incoming_curriculum: Object,
-  //
-  // },
   data() {
     return {
       curriculum_details,
     }
   },
-  beforeUpdate() {
-    // this.curriculum_components = curriculum_details
-  },
-  methods: {
-    updateCurriculumToRender() {
-      // this.curriculum_components.append(this.incoming_curriculum)
-      // console.log("the curriculum component updated is now")
-      // console.log(this.curriculum_components)
-      // alert("logging the appended component now!")
-    }
-  }
 }
 </script>
 
-<style scoped>
-/*.details {*/
-/*  margin-left: 20px;*/
-/*  text-align: left;*/
-/*  word-wrap: break-word;*/
-/*}*/
-</style>

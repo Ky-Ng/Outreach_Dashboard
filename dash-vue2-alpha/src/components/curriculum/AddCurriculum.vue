@@ -106,6 +106,7 @@
 
 <script>
 import {NewCurriculumDetail, updateDetails} from '@/components/curriculum/CurriculumData'
+
 export default {
   name: "AddCurriculum",
   props: {},

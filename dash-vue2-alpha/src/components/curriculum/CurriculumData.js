@@ -21,7 +21,7 @@ let curriculum_details = [
 ]
 
 // like an object types
-function NewCurriculumDetail(week, name, student_link, teacher_link, documentation){
+function NewCurriculumDetail(week, name, student_link, teacher_link, documentation) {
     // return {week: week, name: name, student_link: student_link, teacher_link: teacher_link, documentation: documentation}
     this.week = week
     this.name = name
@@ -30,10 +30,8 @@ function NewCurriculumDetail(week, name, student_link, teacher_link, documentati
     this.documentation = documentation
 }
 
-function updateDetails(incoming_curriculum){
+function updateDetails(incoming_curriculum) {
     curriculum_details.push(incoming_curriculum)
-    console.log("from the curriculum data . js")
-    console.log(curriculum_details)
 }
 
-export { curriculum_details , updateDetails, NewCurriculumDetail}
+export {curriculum_details, updateDetails, NewCurriculumDetail}
