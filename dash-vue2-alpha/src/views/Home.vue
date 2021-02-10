@@ -20,7 +20,7 @@
     <!--    nav  -->
     <v-row style="padding-top: 20px">
       <v-col cols="9" style="padding-left: 30px">
-        <AddCurriculum v-if="show_curriculum" @newCurriculum="addCurriculum"></AddCurriculum>
+        <AddCurriculum v-if="show_curriculum"></AddCurriculum>
       </v-col>
       <v-col cols="3">
         <v-row>
@@ -36,7 +36,7 @@
       </v-col>
     </v-row>
 
-    <CurriculumMain v-if="show_curriculum" :incoming_curriculum="temp_add_curriculum"></CurriculumMain>
+    <CurriculumMain v-if="show_curriculum"></CurriculumMain>
     <OutreachMain v-else></OutreachMain>
 
 
@@ -69,13 +69,7 @@ export default {
     }
   },
   methods:{
-    addCurriculum(new_curriculum_object) {
-      alert("joe mama")
-      this.temp_add_curriculum = new_curriculum_object
-      updateDetails(new_curriculum_object)
-      console.log("The curriculum_details from home.vue")
-      console.log(curriculum_details)
-    }
+
   }
 }
 </script>

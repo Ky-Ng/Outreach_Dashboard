@@ -3,7 +3,7 @@
 
 
     <v-expansion-panels
-        v-for="(curriculum, i) in curriculum_components"
+        v-for="(curriculum, i) in curriculum_details"
         :key="i"
         class="my-3"
         color="pink lighten-5"
@@ -32,11 +32,11 @@
       </v-expansion-panel>
     </v-expansion-panels>
     <!--    just a watcher  -->
-    <div v-if="incoming_curriculum != null">
-      <p @change="updateCurriculumToRender">
-        {{ incoming_curriculum.documentation }}
-      </p>
-    </div>
+<!--    <div v-if="incoming_curriculum != null">-->
+<!--      <p @change="updateCurriculumToRender">-->
+<!--        {{ incoming_curriculum.documentation }}-->
+<!--      </p>-->
+<!--    </div>-->
   </v-container>
 </template>
 
@@ -45,24 +45,24 @@ import {curriculum_details} from "@/components/curriculum/CurriculumData";
 
 export default {
   name: "CurriculumContent",
-  props: {
-    incoming_curriculum: Object,
-
-  },
+  // props: {
+  //   incoming_curriculum: Object,
+  //
+  // },
   data() {
     return {
-      curriculum_components: curriculum_details
+      curriculum_details,
     }
   },
   beforeUpdate() {
-    this.curriculum_components = curriculum_details
+    // this.curriculum_components = curriculum_details
   },
   methods: {
     updateCurriculumToRender() {
-      this.curriculum_components.append(this.incoming_curriculum)
-      console.log("the curriculum component updated is now")
-      console.log(this.curriculum_components)
-      alert("logging the appended component now!")
+      // this.curriculum_components.append(this.incoming_curriculum)
+      // console.log("the curriculum component updated is now")
+      // console.log(this.curriculum_components)
+      // alert("logging the appended component now!")
     }
   }
 }

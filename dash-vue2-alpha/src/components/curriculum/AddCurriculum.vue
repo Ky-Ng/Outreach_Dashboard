@@ -97,7 +97,6 @@
 
             </v-card>
           </v-dialog>
-          <!--      TODO fix the issue if not all the components are met, do not allow submit-->
           <!--          TODO fix uneven curriculum name and week-->
         </v-card-actions>
       </v-card>
@@ -106,6 +105,7 @@
 </template>
 
 <script>
+import {NewCurriculumDetail, updateDetails} from '@/components/curriculum/CurriculumData'
 export default {
   name: "AddCurriculum",
   props: {},
@@ -132,10 +132,8 @@ export default {
           this.curriculum_details.documentation.length > 0) {
 
         this.show = false
-        this.$emit('newCurriculum', this.curriculum_details)
-        console.log("Emitting curriculum from AddCurriculum.vue")
-        console.log(this.curriculum_details)
-
+        updateDetails(new NewCurriculumDetail(this.curriculum_details.week, this.curriculum_details.name, this
+            .curriculum_details.student_link, this.curriculum_details.teacher_link, this.curriculum_details.documentation))
       } else {
         this.error = true;
       }
