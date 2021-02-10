@@ -125,6 +125,13 @@ export default {
     }
   },
   methods: {
+    resetCurriculum(){
+      this.curriculum_details.week = ''
+      this.curriculum_details.name = ''
+      this.curriculum_details.student_link = ''
+      this.curriculum_details.teacher_link = ''
+      this.curriculum_details.documentation = ''
+    },
     addCurriculum() {
       if (this.curriculum_details.week.length > 0 &&
           this.curriculum_details.name.length > 0 &&
@@ -135,6 +142,7 @@ export default {
         this.show = false
         updateDetails(new NewCurriculumDetail(this.curriculum_details.week, this.curriculum_details.name, this
             .curriculum_details.student_link, this.curriculum_details.teacher_link, this.curriculum_details.documentation))
+        this.resetCurriculum()
       } else {
         this.error = true;
       }
