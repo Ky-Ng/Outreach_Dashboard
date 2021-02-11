@@ -32,11 +32,11 @@ const routes = [
     name: 'AuthPage',
     component: AuthPage
   },
-  {
-    path: '/test',
-    name: 'Test',
-    component: Test,
-  },
+  // {
+  //   path: '/test',
+  //   name: 'Test',
+  //   component: Test,
+  // },
   {
     path: '/zoom',
     beforeEnter() {location.href = authRedirect("https://zoom.us/j/91639654519?pwd=QW1CWjBuYVlyVytXS0lDVWdPSXduZz09")}
