@@ -22,12 +22,17 @@ let curriculum_details = [
 //     },
 ]
 
+function getCurriculumDetails(){
+    return curriculum_details
+}
+
 function addDetails(incoming_curriculum) {
     // add frontend data to the backend
     dataBase.collection("curriculum").add(incoming_curriculum).then( () =>{
-        console.log("added the new changes to firestore")
     })
 }
+
+
 
 function updateDetail(changes, collection, document_id){
     const destination = dataBase.collection(collection).doc(document_id);
@@ -37,12 +42,16 @@ function updateDetail(changes, collection, document_id){
 function deleteDetail(collection, document_id){
     dataBase.collection(collection).doc(document_id)
         .delete().then(() => {
-          return true
         })
+    curriculum_details.forEach(curriculum =>{
+        if (curriculum.id === document_id){
+            curriculum.show = false //the backend takes time to update the frontend deletion
+        }
+    })
 }
 
 function sortCurriculum(prop){
     curriculum_details.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
 }
 
-export {curriculum_details, addDetails, updateDetail, sortCurriculum, deleteDetail}
+export {curriculum_details, addDetails, updateDetail, sortCurriculum, deleteDetail, getCurriculumDetails}

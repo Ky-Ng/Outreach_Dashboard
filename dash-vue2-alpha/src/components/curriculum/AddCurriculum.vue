@@ -149,7 +149,8 @@ export default {
               name: this.curriculum_details.name,
               student_link: this.curriculum_details.student_link,
               teacher_link: this.curriculum_details.teacher_link,
-              documentation: this.curriculum_details.documentation
+              documentation: this.curriculum_details.documentation,
+              show: true,
             })
 
         this.resetCurriculum()

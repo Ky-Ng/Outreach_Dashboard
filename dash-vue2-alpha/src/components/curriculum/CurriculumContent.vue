@@ -9,7 +9,7 @@
         color="pink lighten-5"
         elevation="2"
     >
-      <v-expansion-panel>
+      <v-expansion-panel v-if="curriculum.show">
         <v-expansion-panel-header>
           <v-col cols="11">
             <h2>Week {{ curriculum.week }}: {{ curriculum.name }}</h2>
@@ -49,12 +49,12 @@ export default {
   components: {
     EditCurriculum
   },
-  data() {
-    return {
-      curriculum_details,
-    }
-  },
+  props: {
 
+  },
+  data() {
+    return {curriculum_details}
+  },
   created() {
     dataBase.collection("curriculum").onSnapshot(res => {
       const changes = res.docChanges()

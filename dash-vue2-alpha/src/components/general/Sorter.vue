@@ -32,12 +32,6 @@ import {sortCurriculum} from "@/components/curriculum/CurriculumData";
 
 export default {
   created() {
-    console.log("sorting in sorter")
-    this.sortThis('week')
-    this.sortThis('week')
-    this.sortThis('week')
-    this.sortThis('week')
-    this.sortThis('week')
   },
   name: "Sorter",
   methods: {
