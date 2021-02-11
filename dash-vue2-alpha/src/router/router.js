@@ -42,6 +42,10 @@ const routes = [
     beforeEnter() {location.href = authRedirect("https://zoom.us/j/91639654519?pwd=QW1CWjBuYVlyVytXS0lDVWdPSXduZz09")}
   },
   {
+    path: '/berbawy',
+    beforeEnter() {location.href = "https://berbawy.com"}
+  },
+  {
     path: '/home',
     name: 'Home',
     component: Home,

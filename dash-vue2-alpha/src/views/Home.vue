@@ -44,7 +44,6 @@
     <CurriculumMain v-if="show_curriculum"></CurriculumMain>
     <OutreachMain v-else></OutreachMain>
 
-
   </v-container>
 </template>
 
