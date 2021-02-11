@@ -105,7 +105,8 @@
 </template>
 
 <script>
-import {NewCurriculumDetail, updateDetails} from '@/components/curriculum/CurriculumData'
+
+import {updateDetails} from "@/components/curriculum/CurriculumData";
 
 export default {
   name: "AddCurriculum",
@@ -132,6 +133,7 @@ export default {
       this.curriculum_details.teacher_link = ''
       this.curriculum_details.documentation = ''
     },
+
     addCurriculum() {
       if (this.curriculum_details.week.length > 0 &&
           this.curriculum_details.name.length > 0 &&
@@ -140,6 +142,7 @@ export default {
           this.curriculum_details.documentation.length > 0) {
 
         this.show = false
+
         updateDetails(
             {
               week: this.curriculum_details.week,
@@ -148,6 +151,7 @@ export default {
               teacher_link: this.curriculum_details.teacher_link,
               documentation: this.curriculum_details.documentation
             })
+
         this.resetCurriculum()
       } else {
         this.error = true;

@@ -36,6 +36,7 @@
 
 <script>
 import {curriculum_details} from "@/components/curriculum/CurriculumData";
+import {dataBase} from "@/backend/backend";
 
 export default {
   name: "CurriculumContent",
@@ -44,6 +45,22 @@ export default {
       curriculum_details,
     }
   },
+
+
+  created() {
+    dataBase.collection("curriculum").onSnapshot(res => {
+          const changes = res.docChanges()
+          changes.forEach(change => {
+
+                if(change.type === 'added'){
+                  console.log(change)
+                  curriculum_details.push({
+                    ...change.doc.data()
+                  })
+                }
+              })
+        })
+  }
 }
 </script>
 

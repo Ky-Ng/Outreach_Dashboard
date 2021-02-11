@@ -12,7 +12,8 @@ export default {
   name: "CurriculumMain",
   components: {
     CurriculumContent,
-  }
+  },
+
 }
 </script>
 
