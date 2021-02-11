@@ -106,7 +106,7 @@
 
 <script>
 
-import {updateDetails} from "@/components/curriculum/CurriculumData";
+import {addDetails} from "@/components/curriculum/CurriculumData";
 
 export default {
   name: "AddCurriculum",
@@ -143,7 +143,7 @@ export default {
 
         this.show = false
 
-        updateDetails(
+        addDetails(
             {
               week: this.curriculum_details.week,
               name: this.curriculum_details.name,

@@ -11,8 +11,12 @@
     >
       <v-expansion-panel>
         <v-expansion-panel-header>
-          <h2>Week {{ curriculum.week }}: {{ curriculum.name }}</h2>
-          <EditCurriculum></EditCurriculum>
+          <v-col cols="11">
+            <h2>Week {{ curriculum.week }}: {{ curriculum.name }}</h2>
+          </v-col>
+          <v-col cols="1">
+            <EditCurriculum :curriculum_detail="curriculum"></EditCurriculum>
+          </v-col>
         </v-expansion-panel-header>
 
         <v-expansion-panel-content>
@@ -42,7 +46,7 @@ import EditCurriculum from "@/components/curriculum/EditCurriculum";
 
 export default {
   name: "CurriculumContent",
-  components:{
+  components: {
     EditCurriculum
   },
   data() {
@@ -50,7 +54,6 @@ export default {
       curriculum_details,
     }
   },
-
 
   created() {
     dataBase.collection("curriculum").onSnapshot(res => {

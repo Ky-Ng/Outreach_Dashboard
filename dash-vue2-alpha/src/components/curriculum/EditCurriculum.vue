@@ -5,7 +5,7 @@
         color="cyan"
         dark
         fab
-        large
+        small
         @click="show = true"
     >
       <v-icon dark>
@@ -27,14 +27,14 @@
               <v-row>
                 <v-col cols="9">
                   <v-text-field
-                      v-model="curriculum_details.name"
+                      v-model="curriculum_detail.name"
                       label="Curriculum Name*"
                       required
                   ></v-text-field>
                 </v-col>
                 <v-col cols="3">
                   <v-text-field
-                      v-model="curriculum_details.week"
+                      v-model="curriculum_detail.week"
                       label="Week*"
                       required
                   ></v-text-field>
@@ -44,21 +44,21 @@
 
               <v-col cols="12">
                 <v-text-field
-                    v-model="curriculum_details.documentation"
+                    v-model="curriculum_detail.documentation"
                     label="Documentation*"
                     required
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
-                    v-model="curriculum_details.teacher_link"
+                    v-model="curriculum_detail.teacher_link"
                     label="Teacher Project*"
                     required
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
-                    v-model="curriculum_details.student_link"
+                    v-model="curriculum_detail.student_link"
                     label="Student Project*"
                     required
                 ></v-text-field>
@@ -85,7 +85,7 @@
                   v-on="on"
                   color="primary"
                   dark
-                  @click=""
+                  @click="updateCurriculum"
               >
                 Save
               </v-btn>
@@ -105,8 +105,53 @@
 </template>
 
 <script>
+
+
+import {addDetails} from "@/components/curriculum/CurriculumData";
+
 export default {
-  name: "EditCurriculum"
+  name: "EditCurriculum",
+  props:{
+    curriculum_detail: {
+      week: '',
+      name: '',
+      student_link: '',
+      teacher_link: '',
+      documentation: ''
+    }
+  },
+  data() {
+    return {
+      show: false,
+      error: false,
+    }
+  },
+
+  methods: {
+    updateCurriculum(){
+      if (this.curriculum_details.week.length > 0 &&
+          this.curriculum_details.name.length > 0 &&
+          this.curriculum_details.student_link.length > 0 &&
+          this.curriculum_details.teacher_link.length > 0 &&
+          this.curriculum_details.documentation.length > 0) {
+
+        this.show = false
+
+        // updateDetails(
+        //     {
+        //       week: this.curriculum_details.week,
+        //       name: this.curriculum_details.name,
+        //       student_link: this.curriculum_details.student_link,
+        //       teacher_link: this.curriculum_details.teacher_link,
+        //       documentation: this.curriculum_details.documentation
+        //     })
+
+        this.resetCurriculum()
+      } else {
+        this.error = true;
+      }
+    }
+  }
 }
 </script>
 

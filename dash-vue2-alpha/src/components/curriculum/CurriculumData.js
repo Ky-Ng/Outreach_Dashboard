@@ -22,7 +22,7 @@ let curriculum_details = [
 //     },
 ]
 
-function updateDetails(incoming_curriculum) {
+function addDetails(incoming_curriculum) {
     // add frontend data to the backend
     dataBase.collection("curriculum").add(incoming_curriculum).then( () =>{
         console.log("added the new changes to firestore")
@@ -30,4 +30,4 @@ function updateDetails(incoming_curriculum) {
 }
 
 
-export {curriculum_details, updateDetails}
+export {curriculum_details, addDetails}
