@@ -18,7 +18,17 @@
       <v-card>
         <!--    used from documentation on vuetify js https://vuetifyjs.com/en/components/dialogs/#without-activator-->
         <v-card-title>
-          <span class="headline">Edit Curriculum</span>
+          <v-col cols="11">
+            <span class="headline">Edit Curriculum</span>
+          </v-col>
+          <v-col cols="1">
+            <v-btn color="error"
+                   @click="deleteDetail">
+              <v-icon>
+                mdi-trash-can-outline
+              </v-icon>
+            </v-btn>
+          </v-col>
         </v-card-title>
         <v-card-text>
           <v-container>
@@ -107,54 +117,55 @@
 <script>
 
 
-import {updateDetail} from "@/components/curriculum/CurriculumData";
+import {deleteDetail, updateDetail} from "@/components/curriculum/CurriculumData";
 
 export default {
   name: "EditCurriculum",
   props: {
     curriculum_detail: {},
   },
-    data() {
-      return {
-        show: false,
-        error: false,
-      }
+  data() {
+    return {
+      show: false,
+      error: false,
+    }
+  },
+
+  methods: {
+    deleteDetail() {
+      deleteDetail("curriculum", this.curriculum_detail.id)
+      this.show = false
     },
 
-    methods: {
-      logID(){
-        console.log(this.curriculum_detail.id)
-      },
-      updateCurriculum() {
-        console.log("curriculum detail from edit curriculum")
-        console.log(this.curriculum_detail)
-        if (this.curriculum_detail.week.length > 0 &&
-            this.curriculum_detail.name.length > 0 &&
-            this.curriculum_detail.student_link.length > 0 &&
-            this.curriculum_detail.teacher_link.length > 0 &&
-            this.curriculum_detail.documentation.length > 0) {
+    updateCurriculum() {
+      console.log("curriculum detail from edit curriculum")
+      console.log(this.curriculum_detail)
+      if (this.curriculum_detail.week.length > 0 &&
+          this.curriculum_detail.name.length > 0 &&
+          this.curriculum_detail.student_link.length > 0 &&
+          this.curriculum_detail.teacher_link.length > 0 &&
+          this.curriculum_detail.documentation.length > 0) {
 
-          this.show = false
+        this.show = false
 
-          updateDetail(
-              {
-                week: this.curriculum_detail.week,
-                name: this.curriculum_detail.name,
-                student_link: this.curriculum_detail.student_link,
-                teacher_link: this.curriculum_detail.teacher_link,
-                documentation: this.curriculum_detail.documentation
-              },
-              "curriculum",
-              this.curriculum_detail.id,
-          )
+        updateDetail(
+            {
+              week: this.curriculum_detail.week,
+              name: this.curriculum_detail.name,
+              student_link: this.curriculum_detail.student_link,
+              teacher_link: this.curriculum_detail.teacher_link,
+              documentation: this.curriculum_detail.documentation
+            },
+            "curriculum",
+            this.curriculum_detail.id,
+        )
 
-          this.resetCurriculum()
-        } else {
-          this.error = true;
-        }
+      } else {
+        this.error = true;
       }
     }
   }
+}
 </script>
 
 <style scoped>

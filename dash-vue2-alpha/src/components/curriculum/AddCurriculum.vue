@@ -127,7 +127,7 @@ export default {
   },
   methods: {
     resetCurriculum(){
-      this.curriculum_details.week = Number
+      this.curriculum_details.week = ''
       this.curriculum_details.name = ''
       this.curriculum_details.student_link = ''
       this.curriculum_details.teacher_link = ''
