@@ -36,8 +36,17 @@ export default {
   name: "Sorter",
   methods:{
     //<!--    credits to the net ninja's tutorial! https://youtu.be/l3BfJ_QI9nI-->
-    sortBy(prop) {
-      curriculum_details.sort((a,b) => a[prop] < b[prop] ? -1:1)
+    sortBy: function (prop) {
+      if (prop === 'week') {
+        curriculum_details.forEach(curriculum => {
+          try {
+            curriculum.week = Number(curriculum.week)
+          } catch (error){
+            console.log(error)
+          }
+        })
+      }
+      curriculum_details.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
     }
   },
   mounted() {
