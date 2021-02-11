@@ -19,13 +19,7 @@
 
     <!--    nav  -->
     <v-row style="padding-top: 20px">
-      <v-col cols="2" style="padding-left: 30px">
-        <AddCurriculum v-if="show_curriculum"></AddCurriculum>
-      </v-col>
-      <v-col cols="7" style="margin-top: 15px">
-        <Sorter></Sorter>
-      </v-col>
-      <v-col cols="3">
+      <v-col cols="5" style="padding-left: 30px">
         <v-row>
           <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white"
           >Change View</p>
@@ -36,6 +30,13 @@
               style="padding-top: 20px"
           ></v-switch>
         </v-row> <!--    Switch   -->
+
+      </v-col>
+      <v-col cols="5" style="margin-top: 15px; margin-left: 70px;">
+        <Sorter></Sorter>
+      </v-col>
+      <v-col cols="1">
+        <AddCurriculum v-if="show_curriculum"></AddCurriculum>
       </v-col>
     </v-row>
 

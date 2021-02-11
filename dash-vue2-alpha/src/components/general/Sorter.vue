@@ -39,6 +39,9 @@ export default {
     sortBy(prop) {
       curriculum_details.sort((a,b) => a[prop] < b[prop] ? -1:1)
     }
+  },
+  mounted() {
+    this.sortBy('week')
   }
 }
 

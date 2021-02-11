@@ -9,7 +9,7 @@
         @click="show = true"
     >
       <v-icon dark>
-        mdi-pencil
+        mdi-plus
       </v-icon>
     </v-btn>
     <v-dialog

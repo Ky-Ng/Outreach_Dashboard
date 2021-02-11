@@ -29,4 +29,5 @@ function updateDetails(incoming_curriculum) {
         })
 }
 
+
 export {curriculum_details, updateDetails}
