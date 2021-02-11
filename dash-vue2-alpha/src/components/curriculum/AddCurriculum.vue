@@ -140,8 +140,14 @@ export default {
           this.curriculum_details.documentation.length > 0) {
 
         this.show = false
-        updateDetails(new NewCurriculumDetail(this.curriculum_details.week, this.curriculum_details.name, this
-            .curriculum_details.student_link, this.curriculum_details.teacher_link, this.curriculum_details.documentation))
+        updateDetails(
+            {
+              week: this.curriculum_details.week,
+              name: this.curriculum_details.name,
+              student_link: this.curriculum_details.student_link,
+              teacher_link: this.curriculum_details.teacher_link,
+              documentation: this.curriculum_details.documentation
+            })
         this.resetCurriculum()
       } else {
         this.error = true;

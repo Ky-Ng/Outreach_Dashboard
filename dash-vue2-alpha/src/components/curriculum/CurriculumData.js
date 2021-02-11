@@ -1,4 +1,6 @@
 // this file stores the curriculum details
+import {dataBase} from "@/backend/backend";
+
 let curriculum_details = [
     {
         week: 1,
@@ -31,6 +33,19 @@ function NewCurriculumDetail(week, name, student_link, teacher_link, documentati
 }
 
 function updateDetails(incoming_curriculum) {
+    dataBase.collection("curriculum").add(incoming_curriculum).then( () =>{
+        console.log("The local is")
+        console.log(curriculum_details)
+
+        console.log("The database object is")
+        console.log(dataBase.collection("curriculum"))
+        
+
+        curriculum_details = dataBase.collection("curriculum")
+
+
+        })
+
     curriculum_details.push(incoming_curriculum)
 }
 
