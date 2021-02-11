@@ -21,7 +21,6 @@
     <v-row style="padding-top: 20px">
       <v-col cols="2" style="padding-left: 30px">
         <AddCurriculum v-if="show_curriculum"></AddCurriculum>
-
       </v-col>
       <v-col cols="7" style="margin-top: 15px">
         <Sorter></Sorter>

@@ -12,6 +12,7 @@
       <v-expansion-panel>
         <v-expansion-panel-header>
           <h2>Week {{ curriculum.week }}: {{ curriculum.name }}</h2>
+          <EditCurriculum></EditCurriculum>
         </v-expansion-panel-header>
 
         <v-expansion-panel-content>
@@ -37,9 +38,13 @@
 <script>
 import {curriculum_details} from "@/components/curriculum/CurriculumData";
 import {dataBase} from "@/backend/backend";
+import EditCurriculum from "@/components/curriculum/EditCurriculum";
 
 export default {
   name: "CurriculumContent",
+  components:{
+    EditCurriculum
+  },
   data() {
     return {
       curriculum_details,
@@ -49,17 +54,17 @@ export default {
 
   created() {
     dataBase.collection("curriculum").onSnapshot(res => {
-          const changes = res.docChanges()
-          changes.forEach(change => {
+      const changes = res.docChanges()
+      changes.forEach(change => {
 
-                if(change.type === 'added'){
-                  console.log(change)
-                  curriculum_details.push({
-                    ...change.doc.data()
-                  })
-                }
-              })
-        })
+        if (change.type === 'added') {
+          console.log(change)
+          curriculum_details.push({
+            ...change.doc.data()
+          })
+        }
+      })
+    })
   }
 }
 </script>
