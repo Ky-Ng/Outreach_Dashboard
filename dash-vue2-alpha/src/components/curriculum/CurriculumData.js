@@ -29,5 +29,9 @@ function addDetails(incoming_curriculum) {
         })
 }
 
+function updateDetail(changes, collection, document_id){
+    const destination = dataBase.collection(collection).doc(document_id);
+    return destination.update(changes)
+}
 
-export {curriculum_details, addDetails}
+export {curriculum_details, addDetails, updateDetail}

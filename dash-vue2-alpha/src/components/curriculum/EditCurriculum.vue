@@ -107,52 +107,54 @@
 <script>
 
 
-import {addDetails} from "@/components/curriculum/CurriculumData";
+import {updateDetail} from "@/components/curriculum/CurriculumData";
 
 export default {
   name: "EditCurriculum",
-  props:{
-    curriculum_detail: {
-      week: '',
-      name: '',
-      student_link: '',
-      teacher_link: '',
-      documentation: ''
-    }
+  props: {
+    curriculum_detail: {},
   },
-  data() {
-    return {
-      show: false,
-      error: false,
-    }
-  },
+    data() {
+      return {
+        show: false,
+        error: false,
+      }
+    },
 
-  methods: {
-    updateCurriculum(){
-      if (this.curriculum_details.week.length > 0 &&
-          this.curriculum_details.name.length > 0 &&
-          this.curriculum_details.student_link.length > 0 &&
-          this.curriculum_details.teacher_link.length > 0 &&
-          this.curriculum_details.documentation.length > 0) {
+    methods: {
+      logID(){
+        console.log(this.curriculum_detail.id)
+      },
+      updateCurriculum() {
+        console.log("curriculum detail from edit curriculum")
+        console.log(this.curriculum_detail)
+        if (this.curriculum_detail.week.length > 0 &&
+            this.curriculum_detail.name.length > 0 &&
+            this.curriculum_detail.student_link.length > 0 &&
+            this.curriculum_detail.teacher_link.length > 0 &&
+            this.curriculum_detail.documentation.length > 0) {
 
-        this.show = false
+          this.show = false
 
-        // updateDetails(
-        //     {
-        //       week: this.curriculum_details.week,
-        //       name: this.curriculum_details.name,
-        //       student_link: this.curriculum_details.student_link,
-        //       teacher_link: this.curriculum_details.teacher_link,
-        //       documentation: this.curriculum_details.documentation
-        //     })
+          updateDetail(
+              {
+                week: this.curriculum_detail.week,
+                name: this.curriculum_detail.name,
+                student_link: this.curriculum_detail.student_link,
+                teacher_link: this.curriculum_detail.teacher_link,
+                documentation: this.curriculum_detail.documentation
+              },
+              "curriculum",
+              this.curriculum_detail.id,
+          )
 
-        this.resetCurriculum()
-      } else {
-        this.error = true;
+          this.resetCurriculum()
+        } else {
+          this.error = true;
+        }
       }
     }
   }
-}
 </script>
 
 <style scoped>
