@@ -19,8 +19,12 @@
 
     <!--    nav  -->
     <v-row style="padding-top: 20px">
-      <v-col cols="9" style="padding-left: 30px">
+      <v-col cols="2" style="padding-left: 30px">
         <AddCurriculum v-if="show_curriculum"></AddCurriculum>
+
+      </v-col>
+      <v-col cols="7" style="margin-top: 15px">
+        <Sorter></Sorter>
       </v-col>
       <v-col cols="3">
         <v-row>
@@ -52,12 +56,14 @@ import CurriculumMain from "@/components/curriculum/CurriculumMain";
 import OutreachMain from "@/components/outreach/OutreachMain";
 import AddCurriculum from "@/components/curriculum/AddCurriculum";
 import {curriculum_details, updateDetails} from "@/components/curriculum/CurriculumData";
+import Sorter from "@/components/general/Sorter";
 
 export default {
   name: 'Home',
   components: {
     OutreachMain,
     CurriculumMain,
+    Sorter,
     AddCurriculum,
   },
 

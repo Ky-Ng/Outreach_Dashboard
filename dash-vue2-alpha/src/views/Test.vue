@@ -3,7 +3,7 @@
     <p>
       Test page
     </p>
-    <AddCurriculum></AddCurriculum>
+<!--    <AddCurriculum></AddCurriculum>-->
     <p style="color: white"
     >{{curriculum_details}}</p>
 
