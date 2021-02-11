@@ -127,7 +127,7 @@ export default {
   },
   methods: {
     resetCurriculum(){
-      this.curriculum_details.week = ''
+      this.curriculum_details.week = Number
       this.curriculum_details.name = ''
       this.curriculum_details.student_link = ''
       this.curriculum_details.teacher_link = ''
@@ -135,7 +135,7 @@ export default {
     },
 
     addCurriculum() {
-      if (this.curriculum_details.week.length > 0 &&
+      if (this.curriculum_details.week !== undefined &&
           this.curriculum_details.name.length > 0 &&
           this.curriculum_details.student_link.length > 0 &&
           this.curriculum_details.teacher_link.length > 0 &&
@@ -156,10 +156,8 @@ export default {
       } else {
         this.error = true;
       }
-
-
     }
-  }
+  },
 }
 </script>
 

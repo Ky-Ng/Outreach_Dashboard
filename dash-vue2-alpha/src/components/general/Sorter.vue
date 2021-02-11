@@ -1,10 +1,10 @@
 <template>
   <div>
-<!--    credits to the net ninja's tutorial! https://youtu.be/l3BfJ_QI9nI-->
+    <!--    credits to the net ninja's tutorial! https://youtu.be/l3BfJ_QI9nI-->
     <v-layout row style="padding-top: 10px">
       <v-btn
           color="#EDE7F6" large
-          @click="sortBy('week')"
+          @click="sortThis('week')"
       >
         <v-icon large left>
           mdi-calendar
@@ -13,12 +13,10 @@
       </v-btn>
 
 
-
-
       <v-btn
           color="#EDE7F6" large
-          @click="sortBy('name')"
           style="margin-left: 10px"
+          @click="sortThis('name')"
       >
         <v-icon large left>
           mdi-sort-alphabetical-variant
@@ -30,29 +28,27 @@
 </template>
 
 <script>
-import {curriculum_details} from "@/components/curriculum/CurriculumData";
+import {sortCurriculum} from "@/components/curriculum/CurriculumData";
 
 export default {
+  created() {
+    console.log("sorting in sorter")
+    this.sortThis('week')
+    this.sortThis('week')
+    this.sortThis('week')
+    this.sortThis('week')
+    this.sortThis('week')
+  },
   name: "Sorter",
-  methods:{
+  methods: {
     //<!--    credits to the net ninja's tutorial! https://youtu.be/l3BfJ_QI9nI-->
-    sortBy: function (prop) {
-      if (prop === 'week') {
-        curriculum_details.forEach(curriculum => {
-          try {
-            curriculum.week = Number(curriculum.week)
-          } catch (error){
-            console.log(error)
-          }
-        })
-      }
-      curriculum_details.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
+    sortThis(prop) {
+      sortCurriculum(prop)
     }
   },
-  mounted() {
-    this.sortBy('week')
-  }
+
 }
+
 
 </script>
 

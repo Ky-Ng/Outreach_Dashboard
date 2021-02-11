@@ -34,4 +34,8 @@ function updateDetail(changes, collection, document_id){
     return destination.update(changes)
 }
 
-export {curriculum_details, addDetails, updateDetail}
+function sortCurriculum(prop){
+    curriculum_details.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
+}
+
+export {curriculum_details, addDetails, updateDetail, sortCurriculum}
