@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import AuthPage from '../views/AuthPage'
 import Home from '../views/Home.vue'
 import {myProjectAuth} from "@/backend/backend";
+import Error from '@/views/Error'
 import Test from '@/views/Test'
 
 
@@ -50,6 +51,11 @@ const routes = [
     name: 'Home',
     component: Home,
     beforeEnter: requireAuth
+  },
+  {
+    path: '*',
+    name: 'Error',
+    component: Error,
   },
   {
     path: '/about',
