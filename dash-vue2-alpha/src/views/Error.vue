@@ -38,7 +38,7 @@ export default {
   name: "Error",
   methods:{
     reroute(){
-      router.push({name: 'Home'})
+      router.push({name: 'AuthPage'})
     }
   }
 }
