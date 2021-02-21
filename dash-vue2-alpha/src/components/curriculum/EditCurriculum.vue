@@ -138,9 +138,7 @@ export default {
     },
 
     updateCurriculum() {
-      console.log("curriculum detail from edit curriculum")
-      console.log(this.curriculum_detail)
-      if (this.curriculum_detail.week.length > 0 &&
+      if (!isNaN(Number(this.curriculum_detail.week)) &&
           this.curriculum_detail.name.length > 0 &&
           this.curriculum_detail.student_link.length > 0 &&
           this.curriculum_detail.teacher_link.length > 0 &&
@@ -150,7 +148,7 @@ export default {
 
         updateDetail(
             {
-              week: this.curriculum_detail.week,
+              week: Number(this.curriculum_detail.week),
               name: this.curriculum_detail.name,
               student_link: this.curriculum_detail.student_link,
               teacher_link: this.curriculum_detail.teacher_link,

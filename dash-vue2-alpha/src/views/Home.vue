@@ -19,20 +19,21 @@
 
     <!--    nav  -->
     <v-row style="padding-top: 20px">
-      <v-col cols="5" style="padding-left: 30px">
-        <v-row>
-          <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white"
-          >Change View</p>
-          <v-switch
-              v-model="show_curriculum"
-              color="white"
-              inset
-              style="padding-top: 20px"
-          ></v-switch>
-        </v-row> <!--    Switch   -->
+<!--      <v-col cols="5" style="padding-left: 30px">-->
+<!--&lt;!&ndash;        <v-row>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white"&ndash;&gt;-->
+<!--&lt;!&ndash;          >Change View</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <v-switch&ndash;&gt;-->
+<!--&lt;!&ndash;              v-model="show_curriculum"&ndash;&gt;-->
+<!--&lt;!&ndash;              color="white"&ndash;&gt;-->
+<!--&lt;!&ndash;              inset&ndash;&gt;-->
+<!--&lt;!&ndash;              style="padding-top: 20px"&ndash;&gt;-->
+<!--&lt;!&ndash;          ></v-switch>&ndash;&gt;-->
+<!--&lt;!&ndash;        </v-row> &lt;!&ndash;    Switch   &ndash;&gt;&ndash;&gt;-->
 
-      </v-col>
-      <v-col cols="5" style="margin-top: 15px; margin-left: 70px;">
+<!--      </v-col>-->
+<!--      margin-left: 70px;-->
+      <v-col cols="10" style="margin-top: 15px; margin-left: 40px">
         <Sorter></Sorter>
       </v-col>
       <v-col cols="1">
@@ -42,7 +43,6 @@
 
     <CurriculumMain v-if="show_curriculum"></CurriculumMain>
     <OutreachMain v-else></OutreachMain>
-
 
   </v-container>
 </template>
