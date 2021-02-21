@@ -34,11 +34,12 @@
 <script>
 import router from "@/router/router";
 
+
 export default {
   name: "Error",
   methods:{
     reroute(){
-      router.push({name: 'AuthPage'})
+      router.push({name: "Home"})
     }
   }
 }

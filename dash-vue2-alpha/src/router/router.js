@@ -5,14 +5,17 @@ import Home from '../views/Home.vue'
 import {myProjectAuth} from "@/backend/backend";
 import Error from '@/views/Error'
 import Test from '@/views/Test'
+import {capitalize} from "@/assets/formatting";
 
 
 Vue.use(VueRouter)
 
+
+
 const requireAuth = (to, from, next) => {
   let user = myProjectAuth.currentUser
   if (!user){
-    next({name: 'AuthPage'})
+    next({name: 'login'})
   }else{
     next()
   }
@@ -21,7 +24,7 @@ const requireAuth = (to, from, next) => {
 const authRedirect = (link) => {
   let user = myProjectAuth.currentUser
   if (!user){
-    next({name: 'AuthPage'})
+    next({name: 'login'})
   }else{
     return link
   }
@@ -30,7 +33,7 @@ const authRedirect = (link) => {
 const routes = [
   {
     path: '/',
-    name: 'AuthPage',
+    name: 'login',
     component: AuthPage
   },
   // {
@@ -73,6 +76,11 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) =>{
+  document.title = "Serendipity STEM - " + capitalize(to.name)
+  next()
 })
 
 export default router
