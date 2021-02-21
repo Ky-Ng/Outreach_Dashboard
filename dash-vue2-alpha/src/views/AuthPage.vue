@@ -18,7 +18,7 @@
       </v-card-subtitle>
 
       <v-card-text class="text--primary">
-        Sign in to be a part of our warm and welcoming STEM community, premium STEM curriculum, and so much more.
+        Sign in to be a part of our warm and welcoming STEM community, get access to our premium STEM curriculum, and so much more.
       </v-card-text>
       <div id="firebaseui-auth-container"></div>
       <v-card-actions>
