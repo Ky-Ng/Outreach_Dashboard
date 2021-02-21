@@ -135,7 +135,8 @@ export default {
     },
 
     addCurriculum() {
-      if (this.curriculum_details.week !== undefined &&
+      //keep the week number as a string so that the user doesn't get the output NaN if they mess up the input
+      if (!isNaN(Number(this.curriculum_details.week)) &&
           this.curriculum_details.name.length > 0 &&
           this.curriculum_details.student_link.length > 0 &&
           this.curriculum_details.teacher_link.length > 0 &&
@@ -145,7 +146,7 @@ export default {
 
         addDetails(
             {
-              week: this.curriculum_details.week,
+              week: Number(this.curriculum_details.week),
               name: this.curriculum_details.name,
               student_link: this.curriculum_details.student_link,
               teacher_link: this.curriculum_details.teacher_link,
