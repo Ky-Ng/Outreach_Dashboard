@@ -20,16 +20,16 @@
     <!--    nav  -->
     <v-row style="padding-top: 20px">
       <v-col cols="5" style="padding-left: 30px">
-<!--        <v-row>-->
-<!--          <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white"-->
-<!--          >Change View</p>-->
-<!--          <v-switch-->
-<!--              v-model="show_curriculum"-->
-<!--              color="white"-->
-<!--              inset-->
-<!--              style="padding-top: 20px"-->
-<!--          ></v-switch>-->
-<!--        </v-row> &lt;!&ndash;    Switch   &ndash;&gt;-->
+        <v-row>
+          <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white"
+          >Change View</p>
+          <v-switch
+              v-model="show_curriculum"
+              color="white"
+              inset
+              style="padding-top: 20px"
+          ></v-switch>
+        </v-row> <!--    Switch   -->
 
       </v-col>
 <!--      margin-left: 70px;-->
