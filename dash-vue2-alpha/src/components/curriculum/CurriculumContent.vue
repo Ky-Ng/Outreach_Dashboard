@@ -3,7 +3,7 @@
 
 
     <v-expansion-panels
-        v-for="(curriculum, i) in curriculum_details"
+        v-for="(curriculum, i) in target_curriculum_array"
         :key="i"
         class="my-3"
         color="pink lighten-5"
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import {curriculum_details, sortCurriculum} from "@/components/curriculum/CurriculumData";
+import {exploration_curriculum, sortCurriculum} from "@/components/curriculum/CurriculumData";
 import {getCollection} from "@/backend/backend";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
 
@@ -49,14 +49,17 @@ export default {
   components: {
     EditCurriculum
   },
-  props: {},
+  props: {
+    curriculum_collection: String,
+    target_curriculum_array: Array
+  },
 
   data() {
-    return {curriculum_details}
+    return {}
   },
 
   mounted() {
-    getCollection("curriculum", curriculum_details)
+    getCollection(this.curriculum_collection, this.target_curriculum_array)
   },
 
   beforeUpdate() {

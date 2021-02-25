@@ -26,7 +26,7 @@
 
 <script>
 import AddCurriculum from "@/components/curriculum/AddCurriculum.vue";
-import {curriculum_details} from "@/components/curriculum/CurriculumData";
+import {exploration_curriculum} from "@/components/curriculum/CurriculumData";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
 
 export default {
@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      curriculum_details
+      curriculum_details: exploration_curriculum
     }
   },
   methods:{

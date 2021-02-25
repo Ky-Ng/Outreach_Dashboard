@@ -21,7 +21,7 @@
 export default {
   name: "Header",
   props:{
-    user: String
+    user: Object
   }
 }
 </script>

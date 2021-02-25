@@ -1,7 +1,7 @@
 // this file stores the curriculum details
 import {dataBase} from "@/backend/backend";
 
-let curriculum_details = [
+let exploration_curriculum = [
 //     {
 //         week: 1,
 //         name: 'Lemonade Stand',
@@ -22,8 +22,10 @@ let curriculum_details = [
 //     },
 ]
 
+let fundamental_curriculum = []
+
 function getCurriculumDetails(){
-    return curriculum_details
+    return exploration_curriculum
 }
 
 function addDetails(incoming_curriculum) {
@@ -43,7 +45,7 @@ function deleteDetail(collection, document_id){
     dataBase.collection(collection).doc(document_id)
         .delete().then(() => {
         })
-    curriculum_details.forEach(curriculum =>{
+    exploration_curriculum.forEach(curriculum =>{
         if (curriculum.id === document_id){
             curriculum.show = false //the backend takes time to update the frontend deletion
         }
@@ -51,7 +53,7 @@ function deleteDetail(collection, document_id){
 }
 
 function sortCurriculum(prop){
-    curriculum_details.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
+    exploration_curriculum.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
 }
 
-export {curriculum_details, addDetails, updateDetail, sortCurriculum, deleteDetail, getCurriculumDetails}
+export {exploration_curriculum, fundamental_curriculum, updateDetail, sortCurriculum, deleteDetail, getCurriculumDetails}
