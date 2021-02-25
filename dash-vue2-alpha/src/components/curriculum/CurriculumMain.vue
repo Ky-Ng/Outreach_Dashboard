@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <CurriculumNav @show_exploration="getShowFundamentals($event)"></CurriculumNav>
+    <CurriculumNav @show_exploration="setShowExploration($event)"></CurriculumNav>
     <div>
 
       <ExplorationContent
@@ -41,7 +41,7 @@ export default {
     }
   },
   methods: {
-    getShowFundamentals(bool) {
+    setShowExploration(bool) {
       this.show_exploration = bool
       console.log("The show exploration status is " + this.show_exploration)
     }
