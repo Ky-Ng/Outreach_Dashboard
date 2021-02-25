@@ -1,21 +1,6 @@
 <template>
   <v-container>
-    <v-card
-        class="mx-auto"
-        color="red accent-2"
-        dark
-        max-width="3000"
-        src="@/assets/FullLOGO.png"
-    >
-      <v-img
-          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
-          max-height="200"
-          src="@/assets/CropLOGO.png"
-      ></v-img>
-      <v-card-title>
-        <h3>Welcome Back {{ USER.displayName }}</h3>
-      </v-card-title>
-    </v-card> <!-- Header -->
+   <Header :user=USER></Header>
 
     <!--    nav  -->
     <v-row style="padding-top: 20px">
@@ -57,10 +42,12 @@ import OutreachMain from "@/components/outreach/OutreachMain";
 import AddCurriculum from "@/components/curriculum/AddCurriculum";
 import {curriculum_details, addDetails} from "@/components/curriculum/CurriculumData";
 import Sorter from "@/components/general/Sorter";
+import Header from "@/components/general/Header";
 
 export default {
   name: 'Home',
   components: {
+    Header,
     OutreachMain,
     CurriculumMain,
     Sorter,
