@@ -38,6 +38,7 @@ export default {
     //<!--    credits to the net ninja's tutorial! https://youtu.be/l3BfJ_QI9nI-->
     sortThis(prop) {
       sortCurriculum(prop)
+      console.log("trying to sort curriculum from sorter by " + prop)
     }
   },
 
