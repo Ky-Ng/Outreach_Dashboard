@@ -1,15 +1,22 @@
 <template>
   <v-container>
-    <CurriculumNav @show_fundmentals="this.show_fundamentals = "></CurriculumNav>
-    <FundamentalsContent
-    :curriculum_collection="`curriculum_fundamental`"
-    :target_curriculum_array="fundamental_curriculum"
-    ></FundamentalsContent>
-    <ExplorationContent
-        :curriculum_collection="`curriculum`"
-        :target_curriculum_array="curriculum_details"
-    ></ExplorationContent>
+    <CurriculumNav @show_exploration="getShowFundamentals($event)"></CurriculumNav>
+    <div>
 
+      <ExplorationContent
+          v-if="show_exploration"
+          :curriculum_collection="`curriculum`"
+          :target_curriculum_array="exploration_curriculum"
+      ></ExplorationContent>
+
+
+      <div v-else>
+        <FundamentalsContent
+            :curriculum_collection="`curriculum_fundamental`"
+            :target_curriculum_array="fundamental_curriculum"
+        ></FundamentalsContent>
+      </div>
+    </div>
 
   </v-container>
 </template>
@@ -26,13 +33,19 @@ export default {
     ExplorationContent: CurriculumContent,
     CurriculumNav
   },
- data(){
-    return{
+  data() {
+    return {
       exploration_curriculum,
       fundamental_curriculum,
-      show_fundamentals: Boolean,
+      show_exploration: Boolean,
     }
- }
+  },
+  methods: {
+    getShowFundamentals(bool) {
+      this.show_exploration = bool
+      console.log("The show exploration status is " + this.show_exploration)
+    }
+  }
 }
 </script>
 

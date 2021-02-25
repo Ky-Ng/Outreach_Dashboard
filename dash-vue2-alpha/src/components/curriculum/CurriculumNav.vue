@@ -2,11 +2,9 @@
   <v-row style="padding-top: 20px">
     <v-col cols="4" style="padding-left: 30px">
       <v-row>
-        <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white"
-        >Switch Curriculum</p>
-        <!--        //todo fix the show curriculum-->
+        <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white">Switch Curriculum</p>
         <v-switch
-            v-model="show_fundamentals"
+            v-model="show_exploration"
             color="white"
             inset
             style="padding-top: 20px"
@@ -33,12 +31,14 @@ export default {
     Sorter,
     AddCurriculum
   },
-  props: {
-    show_fundamentals: Boolean,
+  data() {
+    return {
+      show_exploration: true,
+    }
   },
   methods: {
     emitShowFundamentals() {
-      this.$emit("show_fundamentals", this.show_fundamentals)
+      this.$emit("show_exploration", this.show_exploration)
     }
   }
 }
