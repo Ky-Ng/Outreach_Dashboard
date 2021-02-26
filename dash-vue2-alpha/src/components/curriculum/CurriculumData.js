@@ -53,7 +53,6 @@ function deleteDetail(collection, document_id){
 }
 
 function sortCurriculum(prop){
-    console.log("the exploration curriculum from curriculum data.js is: " + this.exploration_curriculum)
     exploration_curriculum.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
 }
 

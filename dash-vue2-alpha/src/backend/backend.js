@@ -41,4 +41,11 @@ function getCollection(collection, targetArray) {
     })
 }
 
-export {myProjectAuth, dataBase, getCollection}
+async function waitInitFirestore(){
+    setTimeout(() => { console.log("World!"); },
+        2000);
+    console.log("hello async")
+    return "foo"
+}
+
+export {myProjectAuth, dataBase, getCollection, waitInitFirestore}
