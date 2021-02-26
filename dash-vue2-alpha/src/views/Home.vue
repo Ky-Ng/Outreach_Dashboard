@@ -1,6 +1,7 @@
 <template>
   <v-container>
     <Header :user=USER></Header>
+    <TeachingMain></TeachingMain>
     <CurriculumMain></CurriculumMain>
   </v-container>
 </template>
@@ -12,15 +13,14 @@ import OutreachMain from "@/components/outreach/OutreachMain";
 import AddCurriculum from "@/components/curriculum/AddCurriculum";
 import Sorter from "@/components/general/Sorter";
 import Header from "@/components/general/Header";
+import TeachingMain from "@/components/teaching_resources/TeachingMain";
 
 export default {
   name: 'Home',
   components: {
     Header,
-    OutreachMain,
     CurriculumMain,
-    Sorter,
-    AddCurriculum,
+    TeachingMain
   },
 
   data() {
