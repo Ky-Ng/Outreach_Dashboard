@@ -16,7 +16,7 @@
         <h3>Welcome Back {{ USER.displayName }}</h3>
       </v-card-title>
     </v-card> <!-- Header -->
-
+    <TeachingMain></TeachingMain>
     <!--    nav  -->
     <v-row style="padding-top: 20px">
 <!--      <v-col cols="5" style="padding-left: 30px">-->
@@ -57,10 +57,12 @@ import OutreachMain from "@/components/outreach/OutreachMain";
 import AddCurriculum from "@/components/curriculum/AddCurriculum";
 import {curriculum_details, addDetails} from "@/components/curriculum/CurriculumData";
 import Sorter from "@/components/general/Sorter";
+import TeachingMain from "@/components/teaching_resources/TeachingMain";
 
 export default {
   name: 'Home',
   components: {
+    TeachingMain,
     OutreachMain,
     CurriculumMain,
     Sorter,
