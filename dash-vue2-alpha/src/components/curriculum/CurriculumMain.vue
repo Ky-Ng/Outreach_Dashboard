@@ -8,8 +8,7 @@
           :curriculum_collection="`curriculum`"
           :target_curriculum_array="exploration_curriculum"
       ></ExplorationContent>
-
-
+      
       <div v-else>
         <FundamentalsContent
             :curriculum_collection="`curriculum_fundamental`"

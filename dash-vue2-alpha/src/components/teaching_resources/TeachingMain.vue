@@ -1,7 +1,6 @@
 <template>
   <v-container>
 
-
     <v-expansion-panels>
       <v-expansion-panel>
         <v-expansion-panel-header>
@@ -9,6 +8,7 @@
             <h2>Teaching Resources</h2>
           </v-col>
         </v-expansion-panel-header>
+
 
         <v-expansion-panel-content>
           <v-list-item :href=" `https://docs.google.com/document/d/178hD_GJt7F6s6zoXuBdKOhOvl7tQYQrfk_CzOCP3VHo/edit?usp=sharing`" target="_blank">Curriculum Template
@@ -28,11 +28,12 @@
 import {exploration_curriculum, sortCurriculum} from "@/components/curriculum/CurriculumData";
 import {getCollection} from "@/backend/backend";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
+import CurriculumContent from "@/components/curriculum/CurriculumContent";
 
 export default {
   name: "TeachingMain",
   components: {
-    EditCurriculum
+    EditCurriculum,
   },
   props: {
 
