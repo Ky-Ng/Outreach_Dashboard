@@ -10,6 +10,7 @@ admin.initializeApp()
 //Net Ninja tutorial: https://www.youtube.com/watch?v=4wa3CMK4E2Y
 exports.addAdminRole = functions.https.onCall((data, context) =>{
     //get user and add custom claim (admin); since it is a promise it might not return immediately
+    console.log("hey the add admin role has been called")
     return admin.auth().getUserByEmail(data.email).then(user => {
         admin.auth().setCustomUserClaims(user.uid, {
             admin: true, //assigning the admin: true value pair to the custom user @ uid
@@ -19,6 +20,8 @@ exports.addAdminRole = functions.https.onCall((data, context) =>{
             message: `Success!  ${data.email} has been made an admin`
         }
     }).catch(err => {
+        console.log("there was an error")
+        console.log(err)
         return err;
     });
 });

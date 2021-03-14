@@ -61,6 +61,11 @@ const routes = [
     component: Error,
   },
   {
+    path: '/test',
+    name: 'Test',
+    component: Test,
+  },
+  {
     path: '/about',
     beforeEnter() {location.href = 'https://serendipitystem.org'}
     // redirect: window.location.href("https://google.com")
