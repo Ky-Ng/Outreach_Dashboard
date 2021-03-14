@@ -1,26 +1,15 @@
 <template>
   <v-container>
-    <p>
-      Test page
-    </p>
-    <EditCurriculum :curriculum_detail="{
+    <v-btn
+        @click="testing"
+    >Test Cloud Function
+    </v-btn>
 
-        week: 1,
-        name: 'Lemonade Stand',
-
-
-        student_link: 'https://scratch.mit.edu/projects/392293538/editor/',
-        teacher_link: 'https://scratch.mit.edu/projects/392339139/editor/',
-        documentation: 'https://docs.google.com/document/d/1myUQSr9p_nidSYiDRLzR3SQxKBFRb8CyfOgTOQG8NTs/edit?usp=sharing'
-
-    }">
-    </EditCurriculum>
-    }
-    <p style="color: white"
-    >{{curriculum_details}}</p>
-
-
-
+    <v-btn
+        @click="getAuthStatus"
+    >
+      Get Auth Status
+    </v-btn>
   </v-container>
 </template>
 
@@ -28,21 +17,32 @@
 import AddCurriculum from "@/components/curriculum/AddCurriculum.vue";
 import {curriculum_details} from "@/components/curriculum/CurriculumData";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
+import firebase from "firebase";
+import {addAdminRole} from "../../functions";
+import {myProjectAuth} from "@/backend/backend";
 
 export default {
   name: "Test",
-  components:{
+  components: {
     AddCurriculum,
     EditCurriculum,
   },
   data() {
     return {
-      curriculum_details
+      curriculum_details,
+      my_functions: firebase.functions()
     }
   },
-  methods:{
-    testing(){
+  methods: {
+    testing() {
       console.log("working")
+      const addAdminRole = firebase.functions().httpsCallable("addAdminRole")
+      addAdminRole({email: "serendipitystem@gmail.com"}).then(result =>{
+        console.log(result)
+      })
+    },
+    getAuthStatus(){
+      // console.log(myProjectAuth.currentUser)
     }
   }
 }
