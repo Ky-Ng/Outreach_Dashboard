@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {myProjectAuth} from "@/backend/backend";
+import {myProjectAuth} from "@/backend/data_base";
 import CurriculumMain from "@/components/curriculum/CurriculumMain";
 import OutreachMain from "@/components/outreach/OutreachMain";
 import AddCurriculum from "@/components/curriculum/AddCurriculum";

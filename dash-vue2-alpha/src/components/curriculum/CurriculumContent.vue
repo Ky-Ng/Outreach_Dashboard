@@ -14,7 +14,7 @@
           <v-col cols="11">
             <h2>Week {{ curriculum.week }}: {{ curriculum.name }}</h2>
           </v-col>
-          <v-col cols="1">
+          <v-col cols="1" v-if="">
             <EditCurriculum :curriculum_detail="curriculum"></EditCurriculum>
           </v-col>
         </v-expansion-panel-header>
@@ -41,7 +41,7 @@
 
 <script>
 import {exploration_curriculum, sortCurriculum} from "@/components/curriculum/CurriculumData";
-import {getCollection} from "@/backend/backend";
+import {getCollection} from "@/backend/data_base";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
 
 export default {

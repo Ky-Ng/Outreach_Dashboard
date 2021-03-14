@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import AuthPage from '../views/AuthPage'
 import Home from '../views/Home.vue'
-import {myProjectAuth} from "@/backend/backend";
+import {myProjectAuth} from "@/backend/data_base";
 import Error from '@/views/Error'
 import Test from '@/views/Test'
 import {capitalize} from "@/assets/formatting";

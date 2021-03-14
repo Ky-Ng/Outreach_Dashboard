@@ -27,7 +27,7 @@
 
 <script>
 import {exploration_curriculum, sortCurriculum} from "@/components/curriculum/CurriculumData";
-import {getCollection} from "@/backend/backend";
+import {getCollection} from "@/backend/data_base";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
 
 export default {

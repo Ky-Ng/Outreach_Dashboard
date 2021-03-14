@@ -1,5 +1,5 @@
 // this file stores the curriculum details
-import {dataBase} from "@/backend/backend";
+import {dataBase} from "@/backend/data_base";
 
 let exploration_curriculum = [
 //     {
