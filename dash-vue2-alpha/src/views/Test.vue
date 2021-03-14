@@ -4,6 +4,12 @@
         @click="testing"
     >Test Cloud Function
     </v-btn>
+
+    <v-btn
+        @click="getAuthStatus"
+    >
+      Get Auth Status
+    </v-btn>
   </v-container>
 </template>
 
@@ -13,6 +19,7 @@ import {curriculum_details} from "@/components/curriculum/CurriculumData";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
 import firebase from "firebase";
 import {addAdminRole} from "../../functions";
+import {myProjectAuth} from "@/backend/backend";
 
 export default {
   name: "Test",
@@ -33,6 +40,9 @@ export default {
       addAdminRole({email: "serendipitystem@gmail.com"}).then(result =>{
         console.log(result)
       })
+    },
+    getAuthStatus(){
+      // console.log(myProjectAuth.currentUser)
     }
   }
 }
