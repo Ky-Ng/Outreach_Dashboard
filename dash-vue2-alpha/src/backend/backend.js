@@ -1,5 +1,4 @@
 import firebase from 'firebase'
-import {exploration_curriculum} from "@/components/curriculum/CurriculumData";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
