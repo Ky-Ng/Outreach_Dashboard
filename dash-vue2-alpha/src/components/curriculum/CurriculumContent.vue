@@ -1,7 +1,6 @@
 <template>
   <v-container>
 
-<v-btn @click="logData">Sign Out</v-btn>
     <v-expansion-panels
         v-for="(curriculum, i) in target_curriculum_array"
         :key="i"
@@ -40,10 +39,9 @@
 </template>
 
 <script>
-import {exploration_curriculum, sortCurriculum} from "@/components/curriculum/CurriculumData";
-import {user, getCollection, myProjectAuth, isAdmin} from "@/backend/backend";
+import {sortCurriculum} from "@/components/curriculum/CurriculumData";
+import {getCollection, isAdmin} from "@/backend/backend";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
-import router from "@/router/router";
 
 export default {
   name: "CurriculumContent",
@@ -58,14 +56,6 @@ export default {
   data() {
     return {
       isAdmin
-    }
-  },
-  methods: {
-    logData(data){
-      console.log("from downatoan " + isAdmin)
-      myProjectAuth.signOut()
-      router.push({name: "login"})
-      router.go(0) // reload the page in order to get the google sign in UI Back
     }
   },
 
