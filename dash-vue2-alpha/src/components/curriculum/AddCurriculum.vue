@@ -6,6 +6,7 @@
         dark
         fab
         large
+        v-if="showAdd"
         @click="show = true"
     >
       <v-icon dark>
@@ -107,10 +108,11 @@
 <script>
 
 import {addDetails} from "@/components/curriculum/CurriculumData";
+import {isAdmin} from "@/backend/backend";
 
 export default {
   name: "AddCurriculum",
-  props: {},
+  props: {showAdd: Boolean,},
 
   data() {
     return {

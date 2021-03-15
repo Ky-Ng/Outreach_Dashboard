@@ -16,7 +16,7 @@
       <Sorter></Sorter>
     </v-col>
     <v-col cols="1">
-      <AddCurriculum></AddCurriculum>
+      <AddCurriculum :showAdd="showAdd"></AddCurriculum>
     </v-col>
   </v-row>
 </template>
@@ -24,6 +24,7 @@
 <script>
 import AddCurriculum from "@/components/curriculum/AddCurriculum";
 import Sorter from "@/components/general/Sorter";
+import {isAdmin, myProjectAuth} from "@/backend/backend";
 
 export default {
   name: "CurriculumNav",
@@ -34,12 +35,21 @@ export default {
   data() {
     return {
       show_exploration: true,
+      showAdd: isAdmin,
     }
   },
   methods: {
     emitShowFundamentals() {
       this.$emit("show_exploration", this.show_exploration)
     }
+  },
+  mounted() {
+    myProjectAuth.onAuthStateChanged(user => {
+      user.getIdTokenResult().then(result => {
+        this.showAdd = result.claims.admin
+        console.log(user.displayName)
+      })
+    })
   }
 }
 </script>
