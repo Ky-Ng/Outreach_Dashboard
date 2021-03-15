@@ -18,10 +18,14 @@
 </template>
 
 <script>
+import {user} from "@/backend/backend";
+
 export default {
   name: "Header",
-  props:{
-    user: Object
+  data() {
+    return {
+      user
+    }
   }
 }
 </script>

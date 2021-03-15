@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <Header :user=USER></Header>
+    <Header></Header>
     <TeachingMain></TeachingMain>
     <CurriculumMain></CurriculumMain>
   </v-container>
@@ -25,7 +25,6 @@ export default {
 
   data() {
     return {
-      USER: myProjectAuth.currentUser,
       show_curriculum: true,
       temp_add_curriculum: null,
     }
