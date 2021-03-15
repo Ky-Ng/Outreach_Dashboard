@@ -1,7 +1,6 @@
 <template>
   <v-container>
 
-
     <v-expansion-panels
         v-for="(curriculum, i) in target_curriculum_array"
         :key="i"
@@ -14,7 +13,7 @@
           <v-col cols="11">
             <h2>Week {{ curriculum.week }}: {{ curriculum.name }}</h2>
           </v-col>
-          <v-col cols="1">
+          <v-col v-if="isAdmin" cols="1">
             <EditCurriculum :curriculum_detail="curriculum"></EditCurriculum>
           </v-col>
         </v-expansion-panel-header>
@@ -40,8 +39,8 @@
 </template>
 
 <script>
-import {exploration_curriculum, sortCurriculum} from "@/components/curriculum/CurriculumData";
-import {getCollection} from "@/backend/backend";
+import {sortCurriculum} from "@/components/curriculum/CurriculumData";
+import {getCollection, isAdmin} from "@/backend/backend";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
 
 export default {
@@ -51,11 +50,13 @@ export default {
   },
   props: {
     curriculum_collection: String,
-    target_curriculum_array: Array
+    target_curriculum_array: Array,
   },
 
   data() {
-    return {}
+    return {
+      isAdmin
+    }
   },
 
   mounted() {

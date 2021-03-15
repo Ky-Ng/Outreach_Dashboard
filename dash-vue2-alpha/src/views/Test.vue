@@ -1,26 +1,8 @@
 <template>
   <v-container>
-    <p>
-      Test page
-    </p>
-    <EditCurriculum :curriculum_detail="{
-
-        week: 1,
-        name: 'Lemonade Stand',
-
-
-        student_link: 'https://scratch.mit.edu/projects/392293538/editor/',
-        teacher_link: 'https://scratch.mit.edu/projects/392339139/editor/',
-        documentation: 'https://docs.google.com/document/d/1myUQSr9p_nidSYiDRLzR3SQxKBFRb8CyfOgTOQG8NTs/edit?usp=sharing'
-
-    }">
-    </EditCurriculum>
-    }
-    <p style="color: white"
-    >{{curriculum_details}}</p>
-
-
-
+    <v-btn @click="testing">
+      Test me
+    </v-btn>
   </v-container>
 </template>
 
@@ -28,6 +10,7 @@
 import AddCurriculum from "@/components/curriculum/AddCurriculum.vue";
 import {exploration_curriculum} from "@/components/curriculum/CurriculumData";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
+import {isAdmin, user} from "@/backend/backend";
 
 export default {
   name: "Test",
@@ -43,6 +26,10 @@ export default {
   methods:{
     testing(){
       console.log("working")
+      console.log("the user is")
+      console.log(user)
+      console.log("is Admin: ")
+      console.log(isAdmin)
     }
   }
 }

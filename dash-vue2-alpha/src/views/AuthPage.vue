@@ -38,6 +38,8 @@
 
 import firebase from "firebase";
 import * as firebaseui from "firebaseui";
+import {user} from "@/backend/backend";
+import router from "@/router/router";
 
 export default {
   name: "auth",

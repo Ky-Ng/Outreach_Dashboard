@@ -56,4 +56,4 @@ function sortCurriculum(prop){
     exploration_curriculum.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
 }
 
-export {exploration_curriculum, fundamental_curriculum, updateDetail, sortCurriculum, deleteDetail, getCurriculumDetails}
+export {exploration_curriculum, fundamental_curriculum, updateDetail, sortCurriculum, deleteDetail, getCurriculumDetails, addDetails}
