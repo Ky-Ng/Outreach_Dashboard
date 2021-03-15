@@ -1,7 +1,7 @@
 <template>
   <v-container>
 
-
+<v-btn @click="logData">Sign Out</v-btn>
     <v-expansion-panels
         v-for="(curriculum, i) in target_curriculum_array"
         :key="i"
@@ -14,7 +14,7 @@
           <v-col cols="11">
             <h2>Week {{ curriculum.week }}: {{ curriculum.name }}</h2>
           </v-col>
-          <v-col cols="1">
+          <v-col v-if="isAdmin" cols="1">
             <EditCurriculum :curriculum_detail="curriculum"></EditCurriculum>
           </v-col>
         </v-expansion-panel-header>
@@ -41,8 +41,9 @@
 
 <script>
 import {exploration_curriculum, sortCurriculum} from "@/components/curriculum/CurriculumData";
-import {getCollection} from "@/backend/backend";
+import {user, getCollection, myProjectAuth, isAdmin} from "@/backend/backend";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
+import router from "@/router/router";
 
 export default {
   name: "CurriculumContent",
@@ -51,11 +52,21 @@ export default {
   },
   props: {
     curriculum_collection: String,
-    target_curriculum_array: Array
+    target_curriculum_array: Array,
   },
 
   data() {
-    return {}
+    return {
+      isAdmin
+    }
+  },
+  methods: {
+    logData(data){
+      console.log("from downatoan " + isAdmin)
+      myProjectAuth.signOut()
+      router.push({name: "login"})
+      router.go(0) // reload the page in order to get the google sign in UI Back
+    }
   },
 
   mounted() {

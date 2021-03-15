@@ -38,9 +38,18 @@
 
 import firebase from "firebase";
 import * as firebaseui from "firebaseui";
+import {user} from "@/backend/backend";
+import router from "@/router/router";
 
 export default {
   name: "auth",
+  // watch: {
+  //   user: function () {
+  //     if (user === undefined){
+  //       router.push({name: "home"})
+  //     }
+  //   }
+  // },
   mounted(){ //when it is mounted
     var uiConfig = {
       signInSuccessUrl: '/home',
