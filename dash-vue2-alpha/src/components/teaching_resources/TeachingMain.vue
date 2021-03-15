@@ -16,7 +16,7 @@
           </v-list-item>
           <v-list-item :href="`https://docs.google.com/document/d/15yU0rux8ty0kOUO1TVZrNz9ihbC47s-Bzt3gSuBWiAg/edit?usp=sharing`" target="_blank">Teaching Process
           </v-list-item>
-          <v-list-item :href="`https://scratch.mit.edu`" target="_blank">Scratch (Username: Serendipity Outreach | Password: Dipity123*)
+          <v-list-item :href="`https://scratch.mit.edu`" target="_blank">Scratch (Username: SerendipityOutreach | Password: Ask a Veteran Teacher)
           </v-list-item>
         </v-expansion-panel-content>
 
