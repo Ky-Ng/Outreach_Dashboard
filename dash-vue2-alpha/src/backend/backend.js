@@ -21,14 +21,13 @@ let user = myProjectAuth.onAuthStateChanged(() => {
 
 let isAdmin
 
-if (!user) {
     myProjectAuth.onAuthStateChanged(user => {
         user.getIdTokenResult().then(result => {
             isAdmin = result.claims.admin
             console.log(user.displayName)
         })
     })
-}
+
 const dataBase = firebase.firestore()
 
 function hasSameDoc(localCollection, incomingObject) {
