@@ -10,34 +10,13 @@ let app
 
 // todo wait for the values of firestore's to be initialized first using a promise
 myProjectAuth.onAuthStateChanged(() => {
-    // if (!user) { // needs to deal with the sign out case
-    //     new Vue({
-    //         router,
-    //         vuetify,
-    //         render: h => h(App)
-    //     }).$mount('#app')
-    // }
-    // if (!app) {
-    //     new Vue({
-    //         router,
-    //         vuetify,
-    //         render: h => h(App)
-    //     }).$mount('#app')
-    //
-    //
-    // }
     //trying to use the async firestore func as buffer
-    dataBase.collection("curriculum").onSnapshot(res => {
-
-        if (!app) {
-            new Vue({
-                router,
-                vuetify,
-                render: h => h(App)
-            }).$mount('#app')
-
-
-        }
-    })
+    if (!app) {
+        new Vue({
+            router,
+            vuetify,
+            render: h => h(App)
+        }).$mount('#app')
+    }
 })
 
