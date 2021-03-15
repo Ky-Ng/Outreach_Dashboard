@@ -19,7 +19,7 @@
           </v-card-title>
         </v-col>
         <v-col cols="2">
-          <v-btn color="transparent"  flat large height="100%" light class="ml-15 pt-1" style="margin-left: 10px">
+          <v-btn color="transparent" large height="100%" light class="ml-15 pt-1" style="margin-left: 10px">
             <v-icon @click="logOut" large>mdi-logout</v-icon>
           </v-btn>
         </v-col>
