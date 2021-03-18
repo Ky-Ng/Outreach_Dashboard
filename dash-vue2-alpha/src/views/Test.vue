@@ -13,6 +13,7 @@ import {exploration_curriculum} from "@/components/curriculum/CurriculumData";
 import EditCurriculum from "@/components/curriculum/EditCurriculum";
 import {isAdmin, user} from "@/backend/backend";
 import MakeAdminForm from "@/components/admin/MakeAdminForm";
+import {mysecrets} from "@/backend/secrets";
 
 export default {
   name: "Test",
@@ -29,10 +30,8 @@ export default {
   methods:{
     testing(){
       console.log("working")
-      console.log("the user is")
-      console.log(user)
-      console.log("is Admin: ")
-      console.log(isAdmin)
+      console.log(mysecrets)
+
     }
   }
 }

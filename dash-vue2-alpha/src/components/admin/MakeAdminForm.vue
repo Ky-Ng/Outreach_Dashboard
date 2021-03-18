@@ -75,6 +75,7 @@
 <script>
 import {myProjectAuth} from "@/backend/backend";
 import {addAdminRole} from "../../../functions";
+import firebase from "firebase";
 
 export default {
   name: "MakeAdminForm",
@@ -96,7 +97,10 @@ export default {
   methods: {
     addAdmin(){
       if (! this.email.length > 0){
-        addAdminRole(this.email)
+        const addAdminRole = firebase.functions().httpsCallable("addAdminRole")
+        addAdminRole({email: "ng.kyle101@gmail.com"}).then(result=>{
+          console.log(result)
+        })
       } else {
         this.show = false
       }
