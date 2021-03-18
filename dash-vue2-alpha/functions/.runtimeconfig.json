@@ -1,0 +1,8 @@
+{
+  "stripe": {
+    "secret": "foobar"
+  },
+  "mysecrets": {
+    "apikey": "AIzaSyDQyPCfmtUkQ70XPzcByeu51fdlI_r-5dA"
+  }
+}
