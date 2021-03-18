@@ -8,7 +8,7 @@ const firebaseConfig = {
     projectId: "outreach-dash",
     storageBucket: "outreach-dash.appspot.com",
     messagingSenderId: "1060044447635",
-    appId: "1:1060044447635:web:37e25768831d7533871266",
+    appId: secrets.mysecrets.projectkey,
     measurementId: "G-6ETTDL48LL"
 };
 
