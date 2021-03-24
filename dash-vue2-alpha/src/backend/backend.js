@@ -1,4 +1,5 @@
 import firebase from 'firebase'
+import {sortCurriculum} from "@/components/curriculum/CurriculumData";
 
 let secrets = require("../../functions/.runtimeconfig.json");
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -48,6 +49,11 @@ function getCollection(collection, targetArray) {
                 })
 
                 console.log("Change in Data")
+                try {
+                    sortCurriculum("week")
+                }catch (e) {
+                    console.log(e)
+                }
             }
         })
     })
