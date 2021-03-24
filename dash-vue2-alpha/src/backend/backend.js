@@ -5,12 +5,12 @@ let secrets = require("../../functions/.runtimeconfig.json");
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: secrets.mysecrets.apikey,
-    authDomain: "outreach-dash.firebaseapp.com",
-    projectId: "outreach-dash",
-    storageBucket: "outreach-dash.appspot.com",
-    messagingSenderId: "1060044447635",
+    authDomain: secrets.mysecrets.authdomain,
+    projectId: secrets.mysecrets.projectid,
+    storageBucket: secrets.mysecrets.storagebucket,
+    messagingSenderId: secrets.mysecrets.messagingsenderid,
     appId: secrets.mysecrets.projectkey,
-    measurementId: "G-6ETTDL48LL"
+    measurementId: secrets.mysecrets.measurementid,
 };
 
 // init firebase
