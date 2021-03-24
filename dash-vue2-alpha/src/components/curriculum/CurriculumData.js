@@ -54,6 +54,7 @@ function deleteDetail(collection, document_id){
 
 function sortCurriculum(prop){
     exploration_curriculum.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
+    fundamental_curriculum.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
 }
 
 export {exploration_curriculum, fundamental_curriculum, updateDetail, sortCurriculum, deleteDetail, getCurriculumDetails, addDetails}
