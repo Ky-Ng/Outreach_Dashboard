@@ -1,13 +1,14 @@
 import firebase from 'firebase'
 
+let secrets = require("../../functions/.runtimeconfig.json");
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyDQyPCfmtUkQ70XPzcByeu51fdlI_r-5dA",
+    apiKey: secrets.mysecrets.apikey,
     authDomain: "outreach-dash.firebaseapp.com",
     projectId: "outreach-dash",
     storageBucket: "outreach-dash.appspot.com",
     messagingSenderId: "1060044447635",
-    appId: "1:1060044447635:web:37e25768831d7533871266",
+    appId: secrets.mysecrets.projectkey,
     measurementId: "G-6ETTDL48LL"
 };
 

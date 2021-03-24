@@ -59,15 +59,15 @@ export default {
 
   data() {
     return {
-      showEdit: isAdmin
+      showEdit: isAdmin,
     }
   },
   mounted() {
     getCollection(this.curriculum_collection, this.target_curriculum_array)
+    sortCurriculum("week")
   },
 
   beforeUpdate() {
-    sortCurriculum("week")
     this.showEdit = isAdmin
   }
 }
