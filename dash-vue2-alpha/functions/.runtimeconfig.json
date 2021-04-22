@@ -3,6 +3,12 @@
     "secret": "foobar"
   },
   "mysecrets": {
-    "apikey": "AIzaSyDQyPCfmtUkQ70XPzcByeu51fdlI_r-5dA"
+    "authdomain": "outreach-dash.firebaseapp.com",
+    "storagebucket": "outreach-dash.appspot.com",
+    "projectkey": "1:1060044447635:web:37e25768831d7533871266",
+    "messagingsenderid": "1060044447635",
+    "apikey": "AIzaSyDQyPCfmtUkQ70XPzcByeu51fdlI_r-5dA",
+    "measurementid": "G-6ETTDL48LL",
+    "projectid": "outreach-dash"
   }
 }
