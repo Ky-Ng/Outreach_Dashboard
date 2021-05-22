@@ -11,11 +11,15 @@
         </v-expansion-panel-header>
 
         <v-expansion-panel-content>
-          <v-list-item :href=" `https://bit.ly/serendipitySheet`" target="_blank">Create your own curriculum repository to streamline teaching resources, especially during Distance Learning</v-list-item>
-          <v-list-item :href=" `https://docs.google.com/document/d/178hD_GJt7F6s6zoXuBdKOhOvl7tQYQrfk_CzOCP3VHo/edit?usp=sharing`" target="_blank">Inspired by Serendipity STEM's Special Education outreach in STEM curriculum development
-          </v-list-item>
-          <v-list-item :href="`https://docs.google.com/document/d/15yU0rux8ty0kOUO1TVZrNz9ihbC47s-Bzt3gSuBWiAg/edit?usp=sharing`" target="_blank">Project for Ms. Berbawy's Principle of Engineering Course
-          </v-list-item>
+<!--          <v-list-item :href=" `https://bit.ly/serendipitySheet`" target="_blank">Create your own curriculum repository to streamline teaching resources, especially during Distance Learning</v-list-item>-->
+<!--          <v-list-item :href=" `https://docs.google.com/document/d/178hD_GJt7F6s6zoXuBdKOhOvl7tQYQrfk_CzOCP3VHo/edit?usp=sharing`" target="_blank">Inspired by Serendipity STEM's Special Education outreach in STEM curriculum development-->
+<!--          </v-list-item>-->
+<!--          <v-list-item :href="`https://docs.google.com/document/d/15yU0rux8ty0kOUO1TVZrNz9ihbC47s-Bzt3gSuBWiAg/edit?usp=sharing`" target="_blank">Project for Ms. Berbawy's Principle of Engineering Course-->
+<!--          </v-list-item>-->
+          <v-list-item :href=" `https://bit.ly/serendipitySheet`" target="_blank">Serendipity STEM Master Sheet</v-list-item>
+          <v-list-item :href="`https://docs.google.com/document/d/15yU0rux8ty0kOUO1TVZrNz9ihbC47s-Bzt3gSuBWiAg/edit?usp=sharing`" target="_blank">Train the Trainers Program</v-list-item>
+          <v-list-item :href=" `https://docs.google.com/document/d/178hD_GJt7F6s6zoXuBdKOhOvl7tQYQrfk_CzOCP3VHo/edit?usp=sharing`" target="_blank">Curriculum Template</v-list-item>
+
         </v-expansion-panel-content>
 <!--      <v-expansion-panel>-->
 <!--        <v-expansion-panel-header>-->

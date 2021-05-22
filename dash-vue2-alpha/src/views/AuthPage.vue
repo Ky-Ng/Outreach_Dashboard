@@ -5,9 +5,10 @@
         class="mx-auto my-3"
         max-width="900"
     >
+
+
       <v-img
           class="white--text align-end"
-          height="400px"
           src="../assets/FullLOGO.png"
       >
         <v-card-title>Community Outreach Reengineered</v-card-title>
@@ -17,19 +18,11 @@
 
       </v-card-subtitle>
 
-      <v-card-text class="text--primary">
-        Sign in to be a part of our warm and welcoming STEM community, get access to our premium STEM curriculum, and so much more.
+      <v-card-text class="text--primary text-center text-h6">
+        Join Serendipity in our quest to build a community through STEM
       </v-card-text>
-      <div id="firebaseui-auth-container"></div>
-      <v-card-actions>
-        <v-btn
-            color="red"
-            text
-        >
+      <div class="pb-2" id="firebaseui-auth-container"></div>
 
-        </v-btn>
-
-      </v-card-actions>
     </v-card>
   </div>
 </template>
@@ -37,7 +30,8 @@
 <script>
 
 import firebase from "firebase";
-import * as firebaseui from "firebaseui";
+import * as firebaseui from 'firebaseui'
+import 'firebaseui/dist/firebaseui.css'
 import {user} from "@/backend/backend";
 import router from "@/router/router";
 
