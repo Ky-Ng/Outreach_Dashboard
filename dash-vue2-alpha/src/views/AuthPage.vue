@@ -35,12 +35,14 @@ export default {
     // regex for if the browser is safari or not
     this.isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-    var uiConfig = {
-      signInSuccessUrl: "/home",
-      signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
-    };
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    ui.start("#firebaseui-auth-container", uiConfig);
+    if (!this.isSafari) {
+      var uiConfig = {
+        signInSuccessUrl: "/home",
+        signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+      };
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      ui.start("#firebaseui-auth-container", uiConfig);
+    }
   },
 };
 </script>
