@@ -6,14 +6,13 @@
         <v-card-title>Community Outreach Reengineered</v-card-title>
       </v-img>
 
-      <v-card-subtitle class="pb-2" v-if="isSafari">
-        Please note: this app is not supported on Safari.
-      </v-card-subtitle>
-
       <v-card-text class="text--primary text-center text-h6">
         Join Serendipity in our quest to build a community through STEM
       </v-card-text>
-      <div class="pb-2" id="firebaseui-auth-container"></div>
+      <v-card-subtitle class="pb-2" v-if="isSafari">
+        Please view this app on a non-Safari Browser.
+      </v-card-subtitle>
+      <div class="pb-2" id="firebaseui-auth-container" v-if="!isSafari"></div>
     </v-card>
   </div>
 </template>
@@ -30,12 +29,11 @@ export default {
   data() {
     return {
       isSafari: false,
-    }
+    };
   },
   mounted() {
     // regex for if the browser is safari or not
-    this.isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
-    console.log("is this safari", this.isSafari)
+    this.isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
     var uiConfig = {
       signInSuccessUrl: "/home",
