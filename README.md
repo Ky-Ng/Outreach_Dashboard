@@ -5,6 +5,6 @@ During the COVID-19, the inability to communicate face to face often made it har
 
 To see the project's stable version on your device, visit: https://outreach-dash.web.app. 
 
-- Note: due to the Content Security Policy for Google Auth, the app is not supported on Safari as this time.
+- Note: due to the Safart Content Security Policy for Google Auth in this project's configuration, the app is not supported on Safari at this time.
 
 We are constantly improving! This project is open source, feel free to create pull requests at https://github.com/Radagrass-the-infinite/Outreach_Dashboard/pulls and send feedback to serendipitySTEM@gmail.com
