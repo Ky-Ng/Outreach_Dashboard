@@ -1,18 +1,18 @@
 <template>
   <v-row style="padding-top: 20px">
-    <v-col cols="4" style="padding-left: 30px">
-      <v-row>
-        <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white">Switch Curriculum</p>
-        <v-switch
-            v-model="show_exploration"
-            color="white"
-            inset
-            style="padding-top: 20px"
-            @click="emitShowFundamentals"
-        ></v-switch>
-      </v-row> <!--    Switch   -->
-    </v-col>
-    <v-col cols="6" style="margin-top: 15px; margin-left: 40px">
+<!--    <v-col cols="4" style="padding-left: 30px">-->
+<!--&lt;!&ndash;      <v-row>&ndash;&gt;-->
+<!--&lt;!&ndash;        <p style="padding-right: 20px; margin-top: 20px; padding-top: 15px; color: white">Switch Curriculum</p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <v-switch&ndash;&gt;-->
+<!--&lt;!&ndash;            v-model="show_exploration"&ndash;&gt;-->
+<!--&lt;!&ndash;            color="white"&ndash;&gt;-->
+<!--&lt;!&ndash;            inset&ndash;&gt;-->
+<!--&lt;!&ndash;            style="padding-top: 20px"&ndash;&gt;-->
+<!--&lt;!&ndash;            @click="emitShowFundamentals"&ndash;&gt;-->
+<!--&lt;!&ndash;        ></v-switch>&ndash;&gt;-->
+<!--&lt;!&ndash;      </v-row> &lt;!&ndash;    Switch   &ndash;&gt;&ndash;&gt;-->
+<!--    </v-col>-->
+    <v-col cols="10" style="margin-top: 15px; margin-left: 40px">
       <Sorter></Sorter>
     </v-col>
     <v-col cols="1">
@@ -44,12 +44,12 @@ export default {
     }
   },
   mounted() {
-    myProjectAuth.onAuthStateChanged(user => {
-      user.getIdTokenResult().then(result => {
-        this.showAdd = result.claims.admin
-        console.log(user.displayName)
-      })
-    })
+    // myProjectAuth.onAuthStateChanged(user => {
+    //   user.getIdTokenResult().then(result => {
+    //     this.showAdd = result.claims.admin
+    //     console.log(user.displayName)
+    //   })
+    // })
   }
 }
 </script>

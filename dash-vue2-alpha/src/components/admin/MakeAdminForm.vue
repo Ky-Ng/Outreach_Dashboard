@@ -87,12 +87,13 @@ export default {
     }
   },
   mounted() {
-    myProjectAuth.onAuthStateChanged(user => {
-      user.getIdTokenResult().then(result => {
-        this.showAdd = result.claims.admin
-        console.log(user.displayName)
-      })
-    })
+    // myProjectAuth.onAuthStateChanged(user => {
+    //   user.getIdTokenResult().then(result => {
+    //     this.showAdd = result.claims.admin
+    //     console.log(user.displayName)
+    //   })
+    // }
+    // )
   },
   methods: {
     addAdmin(){

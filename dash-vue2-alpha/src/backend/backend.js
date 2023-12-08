@@ -21,14 +21,16 @@ let user = myProjectAuth.onAuthStateChanged(() => {
     user = myProjectAuth.currentUser
 })
 
-let isAdmin
+// const auth = firebase.getAuth()
 
-    myProjectAuth.onAuthStateChanged(user => {
-        user.getIdTokenResult().then(result => {
-            isAdmin = result.claims.admin
-            console.log(user.displayName)
-        })
-    })
+let isAdmin = true
+
+    // myProjectAuth.onAuthStateChanged(auth, (user) => {
+    //     user.getIdTokenResult().then(result => {
+    //         isAdmin = result.claims.admin
+    //         console.log(user.displayName)
+    //     })
+    // })
 
 const dataBase = firebase.firestore()
 
