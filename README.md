@@ -12,13 +12,13 @@ Introduction:
 1. [Live Deployment](#live-deployment)
 2. [Documentation](#Documentation)
 3. [Frameworks Used](#frameworks-used)
-4. [Contribute](#Contribute)
+4. [Contribute](#Pull-Requests)
 
 High Level Features
 1. [Google OAuth Sign In](#Google-OAuth-Sign-In)
-2. [Quick Links (Curriculum Backpack)](#Quick-Links-(Curriculum-Dashboard))
+2. [Quick Links (Curriculum Backpack)](#quick-links-curriculum-dashboard)
 3. [Curriculum View](#Curriculum-View)
-4. [Data Manipulation (Edit/Add)](#Data-Manipulation-(Edit/Add))
+4. [Data Manipulation (Edit/Add)](#data-manipulation-editadd)
 5. [Auto Redirects](#Auto-Redirects)
 ___
 ## 1) Introduction
@@ -50,35 +50,34 @@ ____
 ### Google OAuth Sign In
 - In order to track the changes made by teacher's and rollback changes in the event of malicious user action, Curriculum Dashboard requires Google Authentication before accessing the `/home` server endpoint.
 - Using `Google OAuth microservice` increases `PII` security and user trust
-![[readme_assets/homepage.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/homepage.png)
 ___
 ### Quick Links (Curriculum Dashboard)
 - After logging in, the `Serendipity Backpack` contains the top 3 most used links:
 	- `Serendipity STEM Master Sheet`: Weekly logistics and class schedule
 	- `Train the Trainers Program`: Teaching Philosophy for teacher participating in the `Train the Trainers Program (TTP)`
 	- `Curriculum Template`: An easy duplicatable curriculum template for teacher's to create curriculum and add it to this open-source repository
-![[backpack_quick_ref.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/backpack_quick_ref.png)
 ___
 ### Curriculum View
 - Teacher's who are looking for curriculum can sort the curriculum based on `week` or `name`
-![[main_curriculum.png]]
 ![[alphabetical_sorting.png]]
 - By pressing the dropdown, teacher's can easily access the week's curriculum and code
-![[teacher_code.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/teacher_code.png)
 - Curriculum documentation contains the high level concepts, applicable`NGSS Engineering Standards`, and step by step instructions on how to teach the curriculum
 	- Ex: the concept related here is: [`3-5-ETS1-3 Engineering Design`](https://www.nextgenscience.org/pe/3-5-ets1-3-engineering-design)
 	- Ex: [Dino Run Curriculum](https://docs.google.com/document/d/1kA0PqtdjDRLyuZOjBlbdEOGiDDWlkd3RcMDb6P-Lrk0/edit?usp=sharing) and [Scratch Coding Link](https://scratch.mit.edu/projects/407274223/editor/)
-![[curriculum_documentation.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/curriculum_documentation.png)
 ____
 ### Data Manipulation (Edit/Add)
 - To edit curriculum, teacher's can click on the pencil icon on the right to open up the existing information and save the changes to the `Firebase Datastore`
-![[edit_curriculum.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/edit_curriculum.png)
 - The Plus button adds curriculum and automatically sorts the newly created curriculum in based on the current sorting method (name/week)
-![[add_curriculum.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/add_curriculum.png)
 - In order to improve network latency, adding a curriculum item both (1) `creates a local version of the curriculum` while (2) `lazily sends a PATCH request` to the datastore so that the update does not block the user from further actions
 	- During the next user session, this data will be fetched from the datastore and reflect the changes without the need for a complete refresh from the frontend client
 	- Example with the "Curriculum" `Firebase Collection` implemented:
-![[backend_flow.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/backend_flow.png)
 - This 2 step `frontend` hiding and `lazy` backend request is used in `update` and `delete` operations
 	- This way, there is no refreshes while the user perceives an up to date data view
 ___
@@ -87,7 +86,7 @@ ___
 - Additionally, any url endpoints not specified in the `Vue Router` will be automatically redirected to the `404 Error Page`
 	- The `404 Error Page` will then attempt to redirect the user to the home page but will redirect to the authentication page if the user is not logged in
 - API Keys and Secrets are stored in `Firebase Hosting` scripts to avoid privacy leakages
-![[404_error.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/404_error.png)
 ___
 ## 4) Contribute
 ___
