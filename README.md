@@ -50,7 +50,7 @@ ____
 ### Google OAuth Sign In
 - In order to track the changes made by teacher's and rollback changes in the event of malicious user action, Curriculum Dashboard requires Google Authentication before accessing the `/home` server endpoint.
 - Using `Google OAuth microservice` increases `PII` security and user trust
-![[homepage.png]]
+![[readme_assets/homepage.png]]
 ___
 ### Quick Links (Curriculum Dashboard)
 - After logging in, the `Serendipity Backpack` contains the top 3 most used links:
