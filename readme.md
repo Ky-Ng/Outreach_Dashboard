@@ -8,20 +8,22 @@ The motivation for creating `Curriculum Dashboard` is for teacher's to be able t
 Below is the live deployed web app in addition to key features and the entire documented engineering design process.
 ____
 ## Table of Contents
-Introduction:
+A) Introduction:
 1. [Live Deployment](#live-deployment)
 2. [Documentation](#Documentation)
 3. [Frameworks Used](#frameworks-used)
-4. [Contribute](#Pull-Requests)
 
-High Level Features
+B) High Level Features
 1. [Google OAuth Sign In](#Google-OAuth-Sign-In)
 2. [Quick Links (Curriculum Backpack)](#quick-links-curriculum-dashboard)
 3. [Curriculum View](#Curriculum-View)
 4. [Data Manipulation (Edit/Add)](#data-manipulation-editadd)
 5. [Auto Redirects](#Auto-Redirects)
+
+C )Contribute
+1. [Pull Requests](#Pull-Requests)
 ___
-## 1) Introduction
+## A) Introduction
 ____
 ### Live Deployment
 - Curriculum Dashboard is available at  [outreach-dash.web.app](https://outreach-dash.web.app) hosted by `Google Firebase Hosting`
@@ -45,7 +47,7 @@ ____
 4. Hosting
 	1. `Firebase Hosting` and `Firebase CLI` for compiling and building deployable webapp
 ___
-## 2) High Level Features
+## B) High Level Features
 ____
 ### Google OAuth Sign In
 - In order to track the changes made by teacher's and rollback changes in the event of malicious user action, Curriculum Dashboard requires Google Authentication before accessing the `/home` server endpoint.
@@ -89,7 +91,7 @@ ___
 - API Keys and Secrets are stored in `Firebase Hosting` scripts to avoid privacy leakages
 ![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/404_error.png)
 ___
-## 4) Contribute
+## C) Contribute
 ___
 ### Pull Requests
 Curriculum Dashboard is an open-source project that is actively used by Special Needs organizations in the Greater Bay Area. 
