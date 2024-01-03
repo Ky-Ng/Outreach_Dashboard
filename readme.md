@@ -20,7 +20,7 @@ B) High Level Features
 4. [Data Manipulation (Edit/Add)](#data-manipulation-editadd)
 5. [Auto Redirects](#Auto-Redirects)
 
-C )Contribute
+C) Contribute
 1. [Pull Requests](#Pull-Requests)
 ___
 ## A) Introduction
@@ -64,7 +64,7 @@ ___
 ___
 ### Curriculum View
 - Teacher's who are looking for curriculum can sort the curriculum based on `week` or `name`
-![[alphabetical_sorting.png]]
+![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/alphabetical_sorting.png)
 - By pressing the dropdown, teacher's can easily access the week's curriculum and code
 ![](https://raw.githubusercontent.com/Ky-Ng/Outreach_Dashboard/master/readme_assets/teacher_code.png)
 - Curriculum documentation contains the high level concepts, applicable`NGSS Engineering Standards`, and step by step instructions on how to teach the curriculum
